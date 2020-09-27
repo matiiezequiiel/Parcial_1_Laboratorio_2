@@ -1,0 +1,13 @@
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\bin\Debug\IngresoSistema.exe.config
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\bin\Debug\IngresoSistema.exe
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\bin\Debug\IngresoSistema.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSistema.csprojAssemblyReference.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSistema.FormIngresoSistema.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSistema.Properties.Resources.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSistema.csproj.GenerateResource.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSistema.csproj.CoreCompileInputs.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSistema.exe
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSistema.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\bin\Debug\Entidades.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\bin\Debug\Entidades.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSistema.csproj.CopyComplete
