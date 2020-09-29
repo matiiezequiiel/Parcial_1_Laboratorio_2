@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Producto
+    public class Producto
     {
-        string nombreProducto;
-        string categoriaProducto;
-        float precioProducto;
-        int stockProducto;
-        string codigoProducto;
+            string nombreProducto;
+            string categoriaProducto;
+            double precioProducto;
+            int stockProducto;
+            string codigoProducto;
 
         public Producto()
         {
@@ -45,7 +45,7 @@ namespace Entidades
             set { this.categoriaProducto = value; }
         }
 
-        public float PrecioProducto
+        public double PrecioProducto
         {
             get { return this.precioProducto; }
             set { this.precioProducto = value; }
@@ -61,6 +61,20 @@ namespace Entidades
         {
             get { return this.codigoProducto; }
             set { this.codigoProducto = value; }
+        }
+
+        public static List<Producto> HardcodearProductos()
+        {
+            List<Producto> productosHardcodeados = new List<Producto>();
+
+            productosHardcodeados.Add(new Producto("Harina","Secos",100,20,"AAAAA1"));
+            productosHardcodeados.Add(new Producto("Galletitas", "Secos", 111, 15, "AAAAA2"));
+            productosHardcodeados.Add(new Producto("Banana", "Frutos", 120, 10, "AAAAA3"));
+            productosHardcodeados.Add(new Producto("Nuggets", "Congelados", 150, 10, "AAAAA4"));
+            productosHardcodeados.Add(new Producto("Jamon", "Refrigerados", 180, 10, "AAAAA5"));
+
+            return productosHardcodeados;
+
         }
 
 

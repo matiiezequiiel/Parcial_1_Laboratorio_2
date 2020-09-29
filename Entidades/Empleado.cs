@@ -8,7 +8,6 @@ namespace Entidades
 {
     public class Empleado :Persona
     {
-
         DateTime fechaDeIngreso;
         string puestoEmpleado;
         float sueldoEmpleado;
@@ -27,18 +26,6 @@ namespace Entidades
             this.fechaDeIngreso = fechaDeIngreso;
             this.puestoEmpleado = puesto;
             this.sueldoEmpleado = sueldo;
-        }
-
-        public string NombreEmpleado
-        {
-            get { return this.nombrePersona; }
-            set { this.nombrePersona = value; }
-        }
-
-        public string ApellidoEmpleado
-        {
-            get { return this.apellidoPersona; }
-            set { this.apellidoPersona = value; }
         }
 
 
@@ -60,6 +47,36 @@ namespace Entidades
             get { return this.sueldoEmpleado; }
             set { this.sueldoEmpleado = value; }
         }
+
+        public static List<Empleado> HardcodearEmpleados()
+        {
+            List<Empleado> empleadosHardcodeados = new List<Empleado>();
+       
+            empleadosHardcodeados.Add(new Empleado("Apu", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Administrador",10000));
+            empleadosHardcodeados.Add(new Empleado("Manjula", "Nahasamepapetilon", 3934322,new DateTime(2016,01,10), "Administrador", 10000));
+            empleadosHardcodeados.Add(new Empleado("Sanjay", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000));
+            empleadosHardcodeados.Add(new Empleado("Pahusacheta", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000));
+            empleadosHardcodeados.Add(new Empleado("Jamshed", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000));
+                        
+            return empleadosHardcodeados;
+
+        }
+
+        public static Dictionary<string,string> HardcodearUsuariosYPass()
+        {
+            Dictionary<string, string> miDiccionario = new Dictionary<string, string>();
+            miDiccionario.Add("Apu", "Pass1");
+            miDiccionario.Add("Manjula", "Pass2");
+            miDiccionario.Add("Sanjay", "Pass3");
+            miDiccionario.Add("Pahusacheta", "Pass4");
+            miDiccionario.Add("Jamshed", "Pass5");
+
+            return miDiccionario;
+        }
+
+
+
+        
 
     }
 }

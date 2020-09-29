@@ -18,5 +18,24 @@ namespace Entidades
             this.apellidoPersona = "Sin apellido.";
             this.dniPersona = 0;
         }
+
+        public string NombrePersona
+        {
+            get { return this.nombrePersona; }
+            set { this.nombrePersona = value; }
+        }
+
+        public string ApellidoPersona
+        {
+            get { return this.apellidoPersona; }
+            set { this.apellidoPersona = value; }
+        }
+
+        public int DniPersona
+        {
+            get { return this.dniPersona; }
+            set { this.dniPersona = value; }
+        }
+
     }
 }

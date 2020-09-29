@@ -10,12 +10,12 @@ using System.Windows.Forms;
 using Entidades;
 
 namespace IngresoSistema
-{ 
-    
+{
+
     public partial class FormIngresoSistema : Form
     {
-        Empleado miEmpleado=new Empleado("Juan","Pablo",396757,new DateTime(),"Cajero",456);
-        List<Empleado> auxLista=new List<Empleado>();
+        public string nombreUsuario;
+
         public FormIngresoSistema()
         {
             InitializeComponent();
@@ -23,15 +23,32 @@ namespace IngresoSistema
 
         private void FormIngresoSistema_Load(object sender, EventArgs e)
         {
-            miEmpleado=Comercio.AgregarEmpleado(miEmpleado);
-            
-
-            for (int i = 0; i < 5; i++)
-            {
-                this.listBox1.Items.Add(miEmpleado.NombreEmpleado);
-            }
+           
+            Comercio.CargarHardcodeo();
+            dtgLogin.DataSource= Comercio.RetornarListaEmpleados();
+         
         }
 
-    
+        private void dtgLogin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow linea = this.dtgLogin.Rows[e.RowIndex];
+                nombreUsuario = linea.Cells["nombreEmpleado"].Value.ToString();
+            }
+
+            this.Hide();
+
+            UserPass formInicioSesion = new UserPass();
+            formInicioSesion.txtUsuario.Text = nombreUsuario;
+            formInicioSesion.Show();
+
+
+
+        }
+
     }
 }

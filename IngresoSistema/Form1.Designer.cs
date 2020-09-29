@@ -30,10 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngresoSistema));
             this.label1 = new System.Windows.Forms.Label();
-            this.btnInicioSesion = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dtgLogin = new System.Windows.Forms.DataGridView();
+            this.chcBox = new System.Windows.Forms.CheckBox();
+            this.s = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.nombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDeIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.puestoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dniEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sueldoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -48,31 +54,88 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "¿Quien es usted?";
             // 
-            // btnInicioSesion
+            // dtgLogin
             // 
-            this.btnInicioSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInicioSesion.Location = new System.Drawing.Point(188, 407);
-            this.btnInicioSesion.Name = "btnInicioSesion";
-            this.btnInicioSesion.Size = new System.Drawing.Size(178, 30);
-            this.btnInicioSesion.TabIndex = 2;
-            this.btnInicioSesion.Text = "Iniciar sesion";
-            this.btnInicioSesion.UseVisualStyleBackColor = true;
+            this.dtgLogin.AllowDrop = true;
+            this.dtgLogin.AllowUserToAddRows = false;
+            this.dtgLogin.AllowUserToDeleteRows = false;
+            this.dtgLogin.AllowUserToResizeColumns = false;
+            this.dtgLogin.AllowUserToResizeRows = false;
+            this.dtgLogin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgLogin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.s,
+            this.nombreEmpleado,
+            this.fechaDeIngreso,
+            this.apellidoEmpleado,
+            this.puestoEmpleado,
+            this.dniEmpleado,
+            this.sueldoEmpleado});
+            this.dtgLogin.Location = new System.Drawing.Point(79, 117);
+            this.dtgLogin.MultiSelect = false;
+            this.dtgLogin.Name = "dtgLogin";
+            this.dtgLogin.Size = new System.Drawing.Size(397, 274);
+            this.dtgLogin.TabIndex = 3;
+            this.dtgLogin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgLogin_CellContentClick);
             // 
-            // dataGridView1
+            // chcBox
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(135, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(297, 303);
-            this.dataGridView1.TabIndex = 3;
+            this.chcBox.Location = new System.Drawing.Point(0, 0);
+            this.chcBox.Name = "chcBox";
+            this.chcBox.Size = new System.Drawing.Size(104, 24);
+            this.chcBox.TabIndex = 0;
             // 
-            // listBox1
+            // s
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(151, 102);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(237, 251);
-            this.listBox1.TabIndex = 4;
+            this.s.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.s.HeaderText = "Eleccion";
+            this.s.Name = "s";
+            this.s.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.s.Width = 54;
+            // 
+            // nombreEmpleado
+            // 
+            this.nombreEmpleado.DataPropertyName = "nombrePersona";
+            this.nombreEmpleado.HeaderText = "Nombre";
+            this.nombreEmpleado.Name = "nombreEmpleado";
+            this.nombreEmpleado.ReadOnly = true;
+            this.nombreEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // fechaDeIngreso
+            // 
+            this.fechaDeIngreso.DataPropertyName = "FechaIngreso";
+            this.fechaDeIngreso.HeaderText = "Fecha de Ingreso";
+            this.fechaDeIngreso.Name = "fechaDeIngreso";
+            this.fechaDeIngreso.Visible = false;
+            // 
+            // apellidoEmpleado
+            // 
+            this.apellidoEmpleado.DataPropertyName = "apellidoPersona";
+            this.apellidoEmpleado.HeaderText = "Apellido";
+            this.apellidoEmpleado.Name = "apellidoEmpleado";
+            this.apellidoEmpleado.ReadOnly = true;
+            this.apellidoEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // puestoEmpleado
+            // 
+            this.puestoEmpleado.DataPropertyName = "puestoEmpleado";
+            this.puestoEmpleado.HeaderText = "Puesto";
+            this.puestoEmpleado.Name = "puestoEmpleado";
+            this.puestoEmpleado.ReadOnly = true;
+            this.puestoEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dniEmpleado
+            // 
+            this.dniEmpleado.DataPropertyName = "dniPersona";
+            this.dniEmpleado.HeaderText = "DNI";
+            this.dniEmpleado.Name = "dniEmpleado";
+            this.dniEmpleado.Visible = false;
+            // 
+            // sueldoEmpleado
+            // 
+            this.sueldoEmpleado.DataPropertyName = "sueldoEmpleado";
+            this.sueldoEmpleado.HeaderText = "Sueldo";
+            this.sueldoEmpleado.Name = "sueldoEmpleado";
+            this.sueldoEmpleado.Visible = false;
             // 
             // FormIngresoSistema
             // 
@@ -82,18 +145,16 @@
             this.BackgroundImage = global::IngresoSistema.Properties.Resources.latest;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(570, 460);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnInicioSesion);
+            this.Controls.Add(this.dtgLogin);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormIngresoSistema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ingreso al sistema KWIK-E-MART";
+            this.Text = "blo";
             this.Load += new System.EventHandler(this.FormIngresoSistema_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,9 +163,15 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnInicioSesion;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.DataGridView dtgLogin;
+        private System.Windows.Forms.CheckBox chcBox;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn s;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDeIngreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn puestoEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dniEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sueldoEmpleado;
     }
 }
 

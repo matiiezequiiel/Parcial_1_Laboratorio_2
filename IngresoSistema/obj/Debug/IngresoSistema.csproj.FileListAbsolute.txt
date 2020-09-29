@@ -11,3 +11,17 @@ C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSi
 C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\bin\Debug\Entidades.dll
 C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\bin\Debug\Entidades.pdb
 C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSistema.csproj.CopyComplete
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\bin\Debug\IngresoSistema.exe.config
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\bin\Debug\IngresoSistema.exe
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\bin\Debug\IngresoSistema.pdb
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\bin\Debug\Entidades.dll
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\bin\Debug\Entidades.pdb
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.csprojAssemblyReference.cache
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.FormIngresoSistema.resources
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.Properties.Resources.resources
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.csproj.GenerateResource.cache
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.csproj.CoreCompileInputs.cache
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.csproj.CopyComplete
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.exe
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.pdb
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.UserPass.resources
