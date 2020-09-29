@@ -91,7 +91,6 @@
             this.Name = "UserPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserPass";
-            this.Load += new System.EventHandler(this.UserPass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

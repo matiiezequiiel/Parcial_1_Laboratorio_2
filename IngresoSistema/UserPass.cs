@@ -34,9 +34,6 @@ namespace IngresoSistema
 
         }
 
-        private void UserPass_Load(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }
