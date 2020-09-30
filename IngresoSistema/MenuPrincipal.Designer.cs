@@ -56,6 +56,7 @@
             this.lblDescuento = new System.Windows.Forms.Label();
             this.lblTotalCompra = new System.Windows.Forms.Label();
             this.lblTotalDescuento = new System.Windows.Forms.Label();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,6 +204,7 @@
             this.lsvProductos.TabIndex = 6;
             this.lsvProductos.UseCompatibleStateImageBehavior = false;
             this.lsvProductos.View = System.Windows.Forms.View.Details;
+            this.lsvProductos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lsvProductos_MouseDown);
             // 
             // nombreProducto
             // 
@@ -225,6 +227,9 @@
             // lsvCarrito
             // 
             this.lsvCarrito.AllowDrop = true;
+            this.lsvCarrito.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3});
+            this.lsvCarrito.GridLines = true;
             this.lsvCarrito.HideSelection = false;
             this.lsvCarrito.Location = new System.Drawing.Point(470, 101);
             this.lsvCarrito.MultiSelect = false;
@@ -233,6 +238,8 @@
             this.lsvCarrito.TabIndex = 8;
             this.lsvCarrito.UseCompatibleStateImageBehavior = false;
             this.lsvCarrito.View = System.Windows.Forms.View.Details;
+            this.lsvCarrito.DragDrop += new System.Windows.Forms.DragEventHandler(this.lsvCarrito_DragDrop);
+            this.lsvCarrito.DragOver += new System.Windows.Forms.DragEventHandler(this.lsvCarrito_DragOver);
             // 
             // lblNuevoCliente
             // 
@@ -295,6 +302,11 @@
             this.lblTotalDescuento.Size = new System.Drawing.Size(0, 13);
             this.lblTotalDescuento.TabIndex = 15;
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Productos seleccionados";
+            this.columnHeader3.Width = 144;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,5 +368,6 @@
         private System.Windows.Forms.ColumnHeader stockProducto;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,19 +14,22 @@ namespace IngresoSistema
 {
     public partial class MenuPrincipal : Form
     {
+        List<Producto> listaAuxProd = new List<Producto>();
+        List<Cliente> listaAuxCliente = new List<Cliente>();
 
         public MenuPrincipal()
         {
             InitializeComponent();
-            
+
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             Comercio.CargarHardcodeo();
             CargarMenuCompras(false);
-            CargarListas();
-         
+            CargarListaCliente();
+            CargarListaProducto();
+
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,7 +44,7 @@ namespace IngresoSistema
 
         private void CargarMenuCompras(bool estado)
         {
-            if(estado)
+            if (estado)
             {
                 lblCarrito.Visible = true;
                 lblDescuento.Visible = true;
@@ -75,33 +79,50 @@ namespace IngresoSistema
 
         }
 
-        private void CargarListas()
+        private void CargarListaCliente()
         {
-            List<Producto> listaAuxProd = new List<Producto>();
-            List<Cliente> listaAuxCliente = new List<Cliente>();
 
-            listaAuxProd = Comercio.RetornarListaProductos();
+           
             listaAuxCliente = Comercio.RetornarListaClientes();
-
-            foreach (Producto item in listaAuxProd)
-            {
-                ListViewItem aux = new ListViewItem(item.NombreProducto);
-                aux.SubItems.Add(item.StockProducto.ToString());
-                lsvProductos.Items.Add(aux);
-               
-            }
 
             foreach (Cliente item in listaAuxCliente)
             {
                 ListViewItem aux = new ListViewItem(item.NombrePersona);
                 aux.SubItems.Add(item.ApellidoPersona);
                 lsvClientes.Items.Add(aux);
-              
+
             }
-            
-            
+
+
         }
 
+        private void CargarListaProducto()
+        {
+           
+            listaAuxProd = Comercio.RetornarListaProductos();
+
+            foreach (Producto item in listaAuxProd)
+            {
+                ListViewItem aux = new ListViewItem(item.NombreProducto);
+                aux.SubItems.Add(item.StockProducto.ToString());
+                lsvProductos.Items.Add(aux);
+
+            }
+        }
+
+        private void RefrescarListaProducto()
+        {
+            lsvProductos.Items.Clear();
+         
+            foreach (Producto item in listaAuxProd)
+            {
+                ListViewItem aux = new ListViewItem(item.NombreProducto);
+                aux.SubItems.Add(item.StockProducto.ToString());
+                lsvProductos.Items.Add(aux);
+
+            }
+           
+        }
         private void lsvClientes_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             int indiceCheck;
@@ -112,15 +133,65 @@ namespace IngresoSistema
 
             foreach (ListViewItem auxLista in lsvClientes.Items)
             {
-                if(indiceCheck != auxLista.Index)
+                if (indiceCheck != auxLista.Index)
                 {
                     auxLista.Checked = false;
                 }
 
             }
-       
+
         }
 
+        private void lsvProductos_MouseDown(object sender, MouseEventArgs e)
+        {
+            int linea = lsvProductos.HitTest(e.X, e.Y).Item.Index;
+            // ListViewItem linea=new ListViewItem(lsvProductos.HitTest(e.X, e.Y).Item.ToString());
+            lsvProductos.DoDragDrop(linea, DragDropEffects.Copy);
+
+
+        }
+
+        private void lsvCarrito_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void lsvCarrito_DragDrop(object sender, DragEventArgs e)
+        {
+            int lineaArrastrada = Convert.ToInt32(e.Data.GetData(Type.GetType("System.Int32")));
       
+         
+            foreach (ListViewItem aux in lsvProductos.Items)
+            {
+                if (lineaArrastrada == aux.Index)
+                {
+                    ListViewItem nuevoProducto = new ListViewItem(aux.Text);
+                    lsvCarrito.Items.Add(nuevoProducto);
+                    ActualizarStockListaAux(aux.Text);
+                    break;
+                }
+            }
+           
+        }
+
+        private void ActualizarStockListaAux (string productoActualizar)
+        {
+            int auxStock;
+
+            foreach (Producto item in listaAuxProd)
+            {
+                if(item.NombreProducto==productoActualizar)
+                {
+                    auxStock = item.StockProducto;
+                    item.StockProducto = auxStock - 1;
+                    RefrescarListaProducto();
+                    break;
+                   
+                }
+            }
+        }
+        
+       
+
     }
 }
