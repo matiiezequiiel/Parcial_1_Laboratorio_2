@@ -64,6 +64,16 @@ namespace Entidades
         public static List<Empleado> RetornarListaEmpleados()
         {
             return listaEmpleados;
+        } 
+        
+        public static List<Cliente> RetornarListaClientes()
+        {
+            return listaClientes;
+        } 
+        
+        public static List<Producto> RetornarListaProductos()
+        {
+            return listaProductos;  
         }
 
         public static bool validarUsuario (string usuario, string contraseña)

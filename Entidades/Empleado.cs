@@ -15,7 +15,7 @@ namespace Entidades
 
         public Empleado()
         {
-            fechaDeIngreso = new DateTime(1900,01,01);
+            fechaDeIngreso = new DateTime(1900, 01, 01);
             ticketsVendidos = new int[10];
             this.puestoEmpleado = "Sin puesto";
             this.sueldoEmpleado = 0;
