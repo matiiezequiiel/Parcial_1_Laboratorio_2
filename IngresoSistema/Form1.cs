@@ -15,6 +15,7 @@ namespace IngresoSistema
     public partial class FormIngresoSistema : Form
     {
         public string nombreUsuario;
+        public string privilegiosUsuario;
 
         public FormIngresoSistema()
         {
@@ -38,12 +39,14 @@ namespace IngresoSistema
             {
                 DataGridViewRow linea = this.dtgLogin.Rows[e.RowIndex];
                 nombreUsuario = linea.Cells["nombreEmpleado"].Value.ToString();
+                privilegiosUsuario= linea.Cells["puestoEmpleado"].Value.ToString();
             }
 
             this.Hide();
 
             UserPass formInicioSesion = new UserPass();
             formInicioSesion.txtUsuario.Text = nombreUsuario;
+            formInicioSesion.txtPuesto.Text = privilegiosUsuario;
             formInicioSesion.Show();
 
 

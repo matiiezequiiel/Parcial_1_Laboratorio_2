@@ -22,10 +22,27 @@ namespace IngresoSistema
         {
             string usuario=txtUsuario.Text;
             string pass=txtPass.Text;
+            string privilegios = txtPuesto.Text;
 
             if(Comercio.validarUsuario(usuario,pass))
             {
                 MessageBox.Show("Acceso correcto");
+                this.Hide();
+
+                if (privilegios!="Administrador")
+                {
+                    MenuPrincipal formMenu = new MenuPrincipal();
+                    formMenu.gestionDelNegocioToolStripMenuItem.Enabled = false;
+                    formMenu.Show();
+
+                }
+                else
+                {
+                    MenuPrincipal formMenu = new MenuPrincipal();
+                    formMenu.Show();
+                }
+                
+
             }
             else
             {
@@ -34,6 +51,9 @@ namespace IngresoSistema
 
         }
 
-     
+        private void UserPass_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -11,21 +11,25 @@ namespace Entidades
         DateTime fechaDeIngreso;
         string puestoEmpleado;
         float sueldoEmpleado;
+        int[] ticketsVendidos;
 
         public Empleado()
         {
             fechaDeIngreso = new DateTime(1900,01,01);
+            ticketsVendidos = new int[10];
             this.puestoEmpleado = "Sin puesto";
             this.sueldoEmpleado = 0;
         }    
-        public Empleado(string nombre, string apellido,int dni, DateTime fechaDeIngreso,string puesto,float sueldo)
+        public Empleado(string nombre, string apellido,int dni, DateTime fechaDeIngreso,string puesto,float sueldo,int[] ticketsVendidos )
         {
+            
             this.nombrePersona = nombre;
             this.apellidoPersona = apellido;
             this.dniPersona = dni;
             this.fechaDeIngreso = fechaDeIngreso;
             this.puestoEmpleado = puesto;
             this.sueldoEmpleado = sueldo;
+            this.ticketsVendidos = ticketsVendidos;
         }
 
 
@@ -51,12 +55,14 @@ namespace Entidades
         public static List<Empleado> HardcodearEmpleados()
         {
             List<Empleado> empleadosHardcodeados = new List<Empleado>();
-       
-            empleadosHardcodeados.Add(new Empleado("Apu", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Administrador",10000));
-            empleadosHardcodeados.Add(new Empleado("Manjula", "Nahasamepapetilon", 3934322,new DateTime(2016,01,10), "Administrador", 10000));
-            empleadosHardcodeados.Add(new Empleado("Sanjay", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000));
-            empleadosHardcodeados.Add(new Empleado("Pahusacheta", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000));
-            empleadosHardcodeados.Add(new Empleado("Jamshed", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000));
+            
+            
+      
+            empleadosHardcodeados.Add(new Empleado("Apu", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Administrador",10000,new int[] {1,2,3}));
+            empleadosHardcodeados.Add(new Empleado("Manjula", "Nahasamepapetilon", 3934322,new DateTime(2016,01,10), "Administrador", 10000,new int[] { 4, 5, 6 }));
+            empleadosHardcodeados.Add(new Empleado("Sanjay", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[] { 1, 2 }));
+            empleadosHardcodeados.Add(new Empleado("Pahusacheta", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[] { 4, 5, 6 }));
+            empleadosHardcodeados.Add(new Empleado("Jamshed", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[] { 4, 5, 6 }));
                         
             return empleadosHardcodeados;
 
