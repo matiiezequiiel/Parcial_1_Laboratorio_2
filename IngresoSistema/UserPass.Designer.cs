@@ -33,6 +33,8 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnInicio = new System.Windows.Forms.Button();
+            this.lblPuesto = new System.Windows.Forms.Label();
+            this.txtPuesto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -70,7 +72,7 @@
             // 
             // btnInicio
             // 
-            this.btnInicio.Location = new System.Drawing.Point(106, 147);
+            this.btnInicio.Location = new System.Drawing.Point(111, 171);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(75, 23);
             this.btnInicio.TabIndex = 4;
@@ -78,11 +80,30 @@
             this.btnInicio.UseVisualStyleBackColor = true;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
+            // lblPuesto
+            // 
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.Location = new System.Drawing.Point(30, 139);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(40, 13);
+            this.lblPuesto.TabIndex = 5;
+            this.lblPuesto.Text = "Puesto";
+            // 
+            // txtPuesto
+            // 
+            this.txtPuesto.Location = new System.Drawing.Point(97, 136);
+            this.txtPuesto.Name = "txtPuesto";
+            this.txtPuesto.ReadOnly = true;
+            this.txtPuesto.Size = new System.Drawing.Size(100, 20);
+            this.txtPuesto.TabIndex = 6;
+            // 
             // UserPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(290, 236);
+            this.Controls.Add(this.txtPuesto);
+            this.Controls.Add(this.lblPuesto);
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUsuario);
@@ -91,6 +112,7 @@
             this.Name = "UserPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserPass";
+            this.Load += new System.EventHandler(this.UserPass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +125,7 @@
         public System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button btnInicio;
+        private System.Windows.Forms.Label lblPuesto;
+        public System.Windows.Forms.TextBox txtPuesto;
     }
 }

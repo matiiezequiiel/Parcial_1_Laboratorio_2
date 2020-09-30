@@ -13,7 +13,6 @@ namespace Entidades
        
         float descuentoCliente;
 
-
         public Cliente()
         {
   
@@ -57,16 +56,15 @@ namespace Entidades
         {
             List<Cliente> clientesHardcodeados = new List<Cliente>();
            
-            clientesHardcodeados.Add(new Cliente("Bart", "Simpson", 3937594, 10));
-            clientesHardcodeados.Add(new Cliente("Marge", "Simpson", 3837593, 10));
-            clientesHardcodeados.Add(new Cliente("Homero", "Simpson", 3637592, 10));
-            clientesHardcodeados.Add(new Cliente("Carl", "Carlson", 3437591, 10));
-            clientesHardcodeados.Add(new Cliente("Edna", "Krabaple", 3637580, 10));
-            clientesHardcodeados.Add(new Cliente("Moe", "Zislack", 3237557, 10)) ;
-            clientesHardcodeados.Add(new Cliente("Ned", "Flanders", 3137534, 10));
-            clientesHardcodeados.Add(new Cliente("Montgomery", "Burns", 3937511, 10));
-            clientesHardcodeados.Add(new Cliente("Wandulo", "Smithers", 3337534, 10));
-            clientesHardcodeados.Add(new Cliente("Nelson", "Months", 3637523, 10));
+            clientesHardcodeados.Add(new Cliente("Bart", "Simpson", 111111111, 10));
+            clientesHardcodeados.Add(new Cliente("Marge", "Simpson", 222222222, 10));
+            clientesHardcodeados.Add(new Cliente("Homero", "Simpson", 333333333, 10));
+            clientesHardcodeados.Add(new Cliente("Carl", "Carlson", 444444444, 10));
+            clientesHardcodeados.Add(new Cliente("Edna", "Krabaple", 555555555, 10));
+            clientesHardcodeados.Add(new Cliente("Moe", "Zislack", 666666666, 10)) ;
+            clientesHardcodeados.Add(new Cliente("Ned", "Flanders", 777777777, 10));
+            clientesHardcodeados.Add(new Cliente("Montgomery", "Burns", 888888888, 10));
+            clientesHardcodeados.Add(new Cliente("Wandulo", "Smithers", 999999999, 10));
 
             return clientesHardcodeados;
            
