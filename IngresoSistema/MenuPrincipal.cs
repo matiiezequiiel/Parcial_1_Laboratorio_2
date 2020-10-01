@@ -18,6 +18,7 @@ namespace IngresoSistema
         List<Producto> listaAuxProd = new List<Producto>();
         List<Cliente> listaAuxCliente = new List<Cliente>();
         List<Producto> carroDeCompras = new List<Producto>();
+        
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace IngresoSistema
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            Comercio.CargarHardcodeo();
+                    
             CargarMenuCompras(false);
             CargarListaCliente();
             CargarListaProducto();
@@ -337,6 +338,18 @@ namespace IngresoSistema
             }
         }
 
-     
+        private void lblNuevoCliente_Click(object sender, EventArgs e)
+        {
+            NuevoCliente formAgregarCliente = new NuevoCliente();
+            this.Hide();
+            formAgregarCliente.Show();
+        }
+
+        private void comprasPorEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ComprasPorEmpleado formCompraPorEmpleado = new ComprasPorEmpleado();
+            this.Hide();
+            formCompraPorEmpleado.Show();
+        }
     }
 }

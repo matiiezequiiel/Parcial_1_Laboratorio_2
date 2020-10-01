@@ -46,10 +46,10 @@ namespace Entidades
             set { this.puestoEmpleado = value; }
         }
 
-        public float SueldoEmpleado
+        public int[] TicketsEmpleado
         {
-            get { return this.sueldoEmpleado; }
-            set { this.sueldoEmpleado = value; }
+            get { return this.ticketsVendidos; }
+            set { this.ticketsVendidos = value; }
         }
 
         public static List<Empleado> HardcodearEmpleados()

@@ -48,7 +48,10 @@ namespace IngresoSistema
             {
                 MessageBox.Show("Acceso fallido");
             }
+           
+            Comercio.CargarHardcodeo();
 
+            
         }
 
         private void UserPass_Load(object sender, EventArgs e)

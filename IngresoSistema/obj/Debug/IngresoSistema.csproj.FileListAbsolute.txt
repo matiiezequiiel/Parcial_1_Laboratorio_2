@@ -28,3 +28,5 @@ C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\
 C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSistema.MenuPrincipal.resources
 C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\IngresoSistema\obj\Debug\IngresoSistema.UserPass.resources
 C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.MenuPrincipal.resources
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.NuevoCliente.resources
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.ComprasPorEmpleado.resources

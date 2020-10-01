@@ -10,21 +10,20 @@ namespace Entidades
 {
     public class Cliente : Persona
     {
-       
-        float descuentoCliente;
+      
 
         public Cliente()
         {
   
-            this.descuentoCliente = 0;
+         
         }
 
-        public Cliente(string nombreCliente,string apellidoCliente,int dniCliente,float descuentoCliente)
+        public Cliente(string nombreCliente,string apellidoCliente,int dniCliente)
         {
             this.nombrePersona = nombreCliente;
             this.apellidoPersona = apellidoCliente;
             this.dniPersona = dniCliente;
-            this.descuentoCliente = descuentoCliente;
+           
         }
 
         public string NombreCliente
@@ -45,26 +44,21 @@ namespace Entidades
             set { this.dniPersona = value; }
         }
 
-        public float DescuentoCliente
-        {
-            get { return this.descuentoCliente; }
-            set { this.descuentoCliente = value; }
-        }
-
+       
         
         public static List<Cliente> HardcodearClientes()
         {
             List<Cliente> clientesHardcodeados = new List<Cliente>();
            
-            clientesHardcodeados.Add(new Cliente("Bart", "Simpson", 111111111, 10));
-            clientesHardcodeados.Add(new Cliente("Marge", "Simpson", 222222222, 10));
-            clientesHardcodeados.Add(new Cliente("Homero", "Simpson", 333333333, 10));
-            clientesHardcodeados.Add(new Cliente("Carl", "Carlson", 444444444, 10));
-            clientesHardcodeados.Add(new Cliente("Edna", "Krabaple", 555555555, 10));
-            clientesHardcodeados.Add(new Cliente("Moe", "Zislack", 666666666, 10)) ;
-            clientesHardcodeados.Add(new Cliente("Ned", "Flanders", 777777777, 10));
-            clientesHardcodeados.Add(new Cliente("Montgomery", "Burns", 888888888, 10));
-            clientesHardcodeados.Add(new Cliente("Wandulo", "Smithers", 999999999, 10));
+            clientesHardcodeados.Add(new Cliente("Bart", "Simpson", 111111111));
+            clientesHardcodeados.Add(new Cliente("Marge", "Simpson", 222222222));
+            clientesHardcodeados.Add(new Cliente("Homero", "Simpson", 333333333));
+            clientesHardcodeados.Add(new Cliente("Carl", "Carlson", 444444444));
+            clientesHardcodeados.Add(new Cliente("Edna", "Krabaple", 555555555));
+            clientesHardcodeados.Add(new Cliente("Moe", "Zislack", 666666666)) ;
+            clientesHardcodeados.Add(new Cliente("Ned", "Flanders", 777777777));
+            clientesHardcodeados.Add(new Cliente("Montgomery", "Burns", 888888888));
+            clientesHardcodeados.Add(new Cliente("Wandulo", "Smithers", 999999999));
 
             return clientesHardcodeados;
            

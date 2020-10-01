@@ -65,12 +65,17 @@ namespace Entidades
 
         public static List<Empleado> RetornarListaEmpleados()
         {
+
             return listaEmpleados;
         } 
         
         public static List<Cliente> RetornarListaClientes()
         {
             return listaClientes;
+        }
+        public static List<Venta> RetornarListaVentas()
+        {
+            return listaVentas;
         } 
         
         public static List<Producto> RetornarListaProductos()
@@ -135,8 +140,6 @@ namespace Entidades
 
                 listaProductos.Add(new Producto(nombre, categoria, precio, stock, codigo));
             }
-
-          
 
         }
 
