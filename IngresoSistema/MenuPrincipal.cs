@@ -18,7 +18,6 @@ namespace IngresoSistema
         List<Producto> listaAuxProd = new List<Producto>();
         List<Cliente> listaAuxCliente = new List<Cliente>();
         List<Producto> carroDeCompras = new List<Producto>();
-
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -98,7 +97,8 @@ namespace IngresoSistema
 
         private void CargarListaProducto()
         {
-           
+
+            lsvProductos.Items.Clear();
             listaAuxProd = Comercio.RetornarListaProductos();
 
             foreach (Producto item in listaAuxProd)
@@ -117,6 +117,7 @@ namespace IngresoSistema
             {
                 ListViewItem aux = new ListViewItem(item.NombreProducto);
                 aux.SubItems.Add(item.StockProducto.ToString());
+                aux.SubItems.Add(item.PrecioProducto.ToString());
                 lsvProductos.Items.Add(aux);
 
             }
@@ -132,6 +133,7 @@ namespace IngresoSistema
             {
                 ListViewItem aux = new ListViewItem(item.NombreProducto);
                 aux.SubItems.Add(item.StockProducto.ToString());
+                aux.SubItems.Add(item.PrecioProducto.ToString());
                 lsvProductos.Items.Add(aux);
 
             }
@@ -146,6 +148,7 @@ namespace IngresoSistema
             {
                 ListViewItem aux = new ListViewItem(item.NombreProducto);
                 aux.SubItems.Add(item.StockProducto.ToString());
+                aux.SubItems.Add(item.PrecioProducto.ToString());
                 lsvProductos.Items.Add(aux);
 
             }
@@ -162,17 +165,13 @@ namespace IngresoSistema
 
                 listaAuxProdEnCompra.Add(new Producto(nombre, categoria, precio, stock, codigo));
             }
-
-           
            
         }
         private void lsvClientes_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             int indiceCheck;
-            int count;
 
             indiceCheck = e.Index;
-            count = lsvClientes.Items.Count;
 
             foreach (ListViewItem auxLista in lsvClientes.Items)
             {
@@ -198,33 +197,50 @@ namespace IngresoSistema
 
         private void lsvCarrito_DragDrop(object sender, DragEventArgs e)
         {
-            int lineaArrastrada = Convert.ToInt32(e.Data.GetData(Type.GetType("System.Int32")));
-      
-         
-            foreach (ListViewItem aux in lsvProductos.Items)
+            bool seleccionoCliente = false;
+            
+            foreach (ListViewItem auxLista in lsvClientes.Items)
             {
-                if (lineaArrastrada == aux.Index)
+                if (auxLista.Checked == true)
                 {
-                    ListViewItem nuevoProducto = new ListViewItem(aux.Text);
-                    lsvCarrito.Items.Add(nuevoProducto);
-                    ActualizarStockListaAux(aux.Text);
+                    lsvClientes.CheckBoxes = false;
+                    seleccionoCliente = true;
                     break;
                 }
+                
             }
+
+            if(seleccionoCliente)
+            {
+                int lineaArrastrada = Convert.ToInt32(e.Data.GetData(Type.GetType("System.Int32")));
+
+
+                foreach (ListViewItem aux in lsvProductos.Items)
+                {
+                    if (lineaArrastrada == aux.Index)
+                    {
+                        ListViewItem nuevoProducto = new ListViewItem(aux.Text);
+                        lsvCarrito.Items.Add(nuevoProducto);
+                        ActualizarStockListaAux(aux.Text);
+                        break;
+                    }
+                }
+
+            }
+         
            
         }
 
         private void ActualizarStockListaAux (string productoActualizar)
         {
-            int auxStock;
 
             foreach (Producto item in listaAuxProdEnCompra)
             {
                 if(item.NombreProducto==productoActualizar)
                 {
-                    auxStock = item.StockProducto;
-                    item.StockProducto = auxStock - 1;
+                    item.StockProducto = item.StockProducto - 1;
                     carroDeCompras.Add(item);
+                    SacarTotales();
                     RefrescarListaProducto();
                     break;
                    
@@ -234,13 +250,93 @@ namespace IngresoSistema
 
         private void btnVaciarCarrito_Click(object sender, EventArgs e)
         {
-            lsvCarrito.Items.Clear();
-            carroDeCompras.Clear();
-            RefrescarCarrito();
-           // CargarListaProducto();
+            if(carroDeCompras.Count>0)
+            {
+                lsvCarrito.Items.Clear();
+                carroDeCompras.Clear();
+                lsvClientes.CheckBoxes = true;
+                this.lblTotalCompra.Text = "";
+                this.lblTotalDescuento.Text = "";
+                RefrescarCarrito();
+
+            }
+            else
+            {
+                MessageBox.Show("El carrito esta vacio.");
+            }
+            
+            
+        }
+        
+        private void SacarTotales()
+        {
+            double total=0;
+            double totalDesc = 0;
+            double descuentoProducto = 0;
+
+
+
+            foreach (ListViewItem auxLista in lsvClientes.Items)
+            {
+                if (auxLista.Checked ==true)
+                {
+                    string nombre = auxLista.SubItems[0].Text;
+                    string apellido = auxLista.SubItems[1].Text;
+
+                    if (apellido == "Simpson")
+                    {
+                        foreach (Producto prod in carroDeCompras)
+                        {
+                            total = total + prod.PrecioProducto;
+                            descuentoProducto = prod.PrecioProducto * 15 / 100;
+                            totalDesc = totalDesc + descuentoProducto;
+
+                        }
+                        this.lblTotalCompra.Text = "$" + total.ToString();
+                        this.lblTotalDescuento.Text = "$" + totalDesc.ToString();
+                    }
+                    else
+                    {
+                        foreach (Producto prod in carroDeCompras)
+                        {
+                            total = total + prod.PrecioProducto;
+
+                        }
+                        this.lblTotalCompra.Text = "$" + total.ToString();
+                    }
+
+
+
+                }
+
+            }
+
             
         }
 
-        
+        private void btnConfirmarCompra_Click(object sender, EventArgs e)
+        {
+            if(carroDeCompras.Count>0)
+            {
+                Comercio.CargarVenta(carroDeCompras);
+                Comercio.ActualizarListaStock(listaAuxProdEnCompra);
+                listaAuxProdEnCompra.Clear();
+                lsvCarrito.Items.Clear();
+                lblTotalCompra.Text = "";
+                lblTotalDescuento.Text = ""; 
+                lsvClientes.CheckBoxes = true;
+                carroDeCompras.Clear();
+                CargarListaProducto();
+
+                MessageBox.Show("Compra realizada correctamente.");
+
+            }
+            else
+            {
+                MessageBox.Show("El carrito esta vacio.");
+            }
+        }
+
+     
     }
 }

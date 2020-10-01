@@ -47,8 +47,10 @@
             this.lsvProductos = new System.Windows.Forms.ListView();
             this.nombreProducto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockProducto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblCarrito = new System.Windows.Forms.Label();
             this.lsvCarrito = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblNuevoCliente = new System.Windows.Forms.Button();
             this.btnVaciarCarrito = new System.Windows.Forms.Button();
             this.btnConfirmarCompra = new System.Windows.Forms.Button();
@@ -56,7 +58,6 @@
             this.lblDescuento = new System.Windows.Forms.Label();
             this.lblTotalCompra = new System.Windows.Forms.Label();
             this.lblTotalDescuento = new System.Windows.Forms.Label();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,7 +195,8 @@
             // 
             this.lsvProductos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.nombreProducto,
-            this.stockProducto});
+            this.stockProducto,
+            this.columnHeader4});
             this.lsvProductos.FullRowSelect = true;
             this.lsvProductos.GridLines = true;
             this.lsvProductos.HideSelection = false;
@@ -214,6 +216,10 @@
             // 
             this.stockProducto.Text = "Stock";
             this.stockProducto.Width = 41;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Precio";
             // 
             // lblCarrito
             // 
@@ -240,6 +246,11 @@
             this.lsvCarrito.View = System.Windows.Forms.View.Details;
             this.lsvCarrito.DragDrop += new System.Windows.Forms.DragEventHandler(this.lsvCarrito_DragDrop);
             this.lsvCarrito.DragOver += new System.Windows.Forms.DragEventHandler(this.lsvCarrito_DragOver);
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Productos seleccionados";
+            this.columnHeader3.Width = 144;
             // 
             // lblNuevoCliente
             // 
@@ -268,6 +279,7 @@
             this.btnConfirmarCompra.TabIndex = 11;
             this.btnConfirmarCompra.Text = "CONFIRMAR COMPRA";
             this.btnConfirmarCompra.UseVisualStyleBackColor = true;
+            this.btnConfirmarCompra.Click += new System.EventHandler(this.btnConfirmarCompra_Click);
             // 
             // lblTotal
             // 
@@ -302,11 +314,6 @@
             this.lblTotalDescuento.Name = "lblTotalDescuento";
             this.lblTotalDescuento.Size = new System.Drawing.Size(0, 13);
             this.lblTotalDescuento.TabIndex = 15;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Productos seleccionados";
-            this.columnHeader3.Width = 144;
             // 
             // MenuPrincipal
             // 
@@ -370,5 +377,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

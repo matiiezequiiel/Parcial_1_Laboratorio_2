@@ -14,6 +14,7 @@ namespace Entidades
         static List<Empleado> listaEmpleados;
         static List<Cliente> listaClientes;
         static List<Producto> listaProductos;
+        static List<Venta> listaVentas;
         static Dictionary<string, string> usuariosContraseñas;
 
         static Comercio()
@@ -21,6 +22,7 @@ namespace Entidades
             listaEmpleados = new List<Empleado>();
             listaClientes = new List<Cliente>();
             listaProductos = new List<Producto>();
+            listaVentas = new List<Venta>();
             usuariosContraseñas = new Dictionary<string, string>();
            
 
@@ -111,6 +113,31 @@ namespace Entidades
             return retorno;
            
             
+        }
+
+        public static void CargarVenta(List<Producto> productosVendidos)
+        {
+            Venta miVenta = new Venta(listaVentas.Count + 1, productosVendidos);
+            listaVentas.Add(miVenta);
+
+        }
+        public static void ActualizarListaStock(List<Producto> nuevaListaAct)
+        {
+            listaProductos.Clear();
+            
+            foreach (Producto item in nuevaListaAct)
+            {
+                string nombre = item.NombreProducto;
+                int stock = item.StockProducto;
+                string categoria = item.CategoriaProducto;
+                int codigo = item.CodigoProducto;
+                double precio = item.PrecioProducto;
+
+                listaProductos.Add(new Producto(nombre, categoria, precio, stock, codigo));
+            }
+
+          
+
         }
 
     }
