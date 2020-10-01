@@ -23,7 +23,7 @@ namespace Entidades
             this.codigoProducto = 0;
         }
 
-        public Producto(string nombreProducto,string categoriaProducto,float precioProducto,int stockProducto,int codigoProducto)
+        public Producto(string nombreProducto,string categoriaProducto,double precioProducto,int stockProducto,int codigoProducto)
         {
             this.nombreProducto = nombreProducto;
             this.categoriaProducto = categoriaProducto;

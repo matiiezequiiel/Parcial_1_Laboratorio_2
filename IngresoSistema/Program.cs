@@ -16,7 +16,7 @@ namespace IngresoSistema
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-         //   Application.Run(new FormIngresoSistema());
+          //  Application.Run(new FormIngresoSistema());
             Application.Run(new MenuPrincipal());
         }
     }

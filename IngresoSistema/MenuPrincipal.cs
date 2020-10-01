@@ -14,13 +14,14 @@ namespace IngresoSistema
 {
     public partial class MenuPrincipal : Form
     {
+        List<Producto> listaAuxProdEnCompra=new List<Producto>();
         List<Producto> listaAuxProd = new List<Producto>();
         List<Cliente> listaAuxCliente = new List<Cliente>();
+        List<Producto> carroDeCompras = new List<Producto>();
 
         public MenuPrincipal()
         {
             InitializeComponent();
-
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -29,7 +30,6 @@ namespace IngresoSistema
             CargarMenuCompras(false);
             CargarListaCliente();
             CargarListaProducto();
-
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,9 +81,10 @@ namespace IngresoSistema
 
         private void CargarListaCliente()
         {
-
            
             listaAuxCliente = Comercio.RetornarListaClientes();
+
+
 
             foreach (Cliente item in listaAuxCliente)
             {
@@ -93,13 +94,24 @@ namespace IngresoSistema
 
             }
 
-
         }
 
         private void CargarListaProducto()
         {
            
             listaAuxProd = Comercio.RetornarListaProductos();
+
+            foreach (Producto item in listaAuxProd)
+            {
+                string nombre = item.NombreProducto;
+                int stock = item.StockProducto;
+                string categoria = item.CategoriaProducto;
+                int codigo = item.CodigoProducto;
+                double precio = item.PrecioProducto;
+
+                listaAuxProdEnCompra.Add(new Producto(nombre, categoria, precio, stock, codigo));
+            }
+
 
             foreach (Producto item in listaAuxProd)
             {
@@ -114,6 +126,22 @@ namespace IngresoSistema
         {
             lsvProductos.Items.Clear();
          
+            
+           
+            foreach (Producto item in listaAuxProdEnCompra)
+            {
+                ListViewItem aux = new ListViewItem(item.NombreProducto);
+                aux.SubItems.Add(item.StockProducto.ToString());
+                lsvProductos.Items.Add(aux);
+
+            }
+           
+        }    
+        private void RefrescarCarrito()
+        {
+            lsvProductos.Items.Clear();
+           
+         
             foreach (Producto item in listaAuxProd)
             {
                 ListViewItem aux = new ListViewItem(item.NombreProducto);
@@ -121,6 +149,21 @@ namespace IngresoSistema
                 lsvProductos.Items.Add(aux);
 
             }
+
+            listaAuxProdEnCompra.Clear();
+
+            foreach (Producto item in listaAuxProd)
+            {
+                string nombre = item.NombreProducto;
+                int stock = item.StockProducto;
+                string categoria = item.CategoriaProducto;
+                int codigo = item.CodigoProducto;
+                double precio = item.PrecioProducto;
+
+                listaAuxProdEnCompra.Add(new Producto(nombre, categoria, precio, stock, codigo));
+            }
+
+           
            
         }
         private void lsvClientes_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -145,10 +188,7 @@ namespace IngresoSistema
         private void lsvProductos_MouseDown(object sender, MouseEventArgs e)
         {
             int linea = lsvProductos.HitTest(e.X, e.Y).Item.Index;
-            // ListViewItem linea=new ListViewItem(lsvProductos.HitTest(e.X, e.Y).Item.ToString());
             lsvProductos.DoDragDrop(linea, DragDropEffects.Copy);
-
-
         }
 
         private void lsvCarrito_DragOver(object sender, DragEventArgs e)
@@ -178,20 +218,29 @@ namespace IngresoSistema
         {
             int auxStock;
 
-            foreach (Producto item in listaAuxProd)
+            foreach (Producto item in listaAuxProdEnCompra)
             {
                 if(item.NombreProducto==productoActualizar)
                 {
                     auxStock = item.StockProducto;
                     item.StockProducto = auxStock - 1;
+                    carroDeCompras.Add(item);
                     RefrescarListaProducto();
                     break;
                    
                 }
             }
         }
-        
-       
 
+        private void btnVaciarCarrito_Click(object sender, EventArgs e)
+        {
+            lsvCarrito.Items.Clear();
+            carroDeCompras.Clear();
+            RefrescarCarrito();
+           // CargarListaProducto();
+            
+        }
+
+        
     }
 }

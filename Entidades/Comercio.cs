@@ -73,7 +73,21 @@ namespace Entidades
         
         public static List<Producto> RetornarListaProductos()
         {
-            return listaProductos;  
+            List<Producto> aux = new List<Producto>();
+
+
+            foreach (Producto item in listaProductos)
+            {
+                string nombre = item.NombreProducto;
+                int stock = item.StockProducto;
+                string categoria = item.CategoriaProducto;
+                int codigo = item.CodigoProducto;
+                double precio = item.PrecioProducto;
+
+                aux.Add(new Producto(nombre, categoria, precio, stock, codigo));
+            }
+ 
+            return aux;  
         }
 
         public static bool validarUsuario (string usuario, string contraseña)
