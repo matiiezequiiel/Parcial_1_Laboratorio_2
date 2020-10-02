@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace IngresoSistema
 {
     public partial class UserPass : Form
     {
+        
         public UserPass()
         {
             InitializeComponent();
@@ -33,12 +35,14 @@ namespace IngresoSistema
                 {
                     MenuPrincipal formMenu = new MenuPrincipal();
                     formMenu.gestionDelNegocioToolStripMenuItem.Enabled = false;
+                    formMenu.txtEmpleadoLogeado.Text = usuario;
                     formMenu.Show();
 
                 }
                 else
                 {
                     MenuPrincipal formMenu = new MenuPrincipal();
+                    formMenu.txtEmpleadoLogeado.Text = usuario;
                     formMenu.Show();
                 }
                 

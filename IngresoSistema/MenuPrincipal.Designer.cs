@@ -57,6 +57,8 @@
             this.lblDescuento = new System.Windows.Forms.Label();
             this.lblTotalCompra = new System.Windows.Forms.Label();
             this.lblTotalDescuento = new System.Windows.Forms.Label();
+            this.lblEmpleadoLogeado = new System.Windows.Forms.Label();
+            this.txtEmpleadoLogeado = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,7 +105,7 @@
             this.comprasPorEmpleadoToolStripMenuItem,
             this.productoConMenosDe10UnidadesToolStripMenuItem});
             this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
-            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.listadosToolStripMenuItem.Text = "Listados";
             // 
             // stockDeProductosToolStripMenuItem
@@ -128,7 +130,7 @@
             // altaProductoToolStripMenuItem
             // 
             this.altaProductoToolStripMenuItem.Name = "altaProductoToolStripMenuItem";
-            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.altaProductoToolStripMenuItem.Text = "Alta Producto";
             // 
             // salirToolStripMenuItem
@@ -308,11 +310,30 @@
             this.lblTotalDescuento.Size = new System.Drawing.Size(0, 13);
             this.lblTotalDescuento.TabIndex = 15;
             // 
+            // lblEmpleadoLogeado
+            // 
+            this.lblEmpleadoLogeado.AutoSize = true;
+            this.lblEmpleadoLogeado.Location = new System.Drawing.Point(42, 38);
+            this.lblEmpleadoLogeado.Name = "lblEmpleadoLogeado";
+            this.lblEmpleadoLogeado.Size = new System.Drawing.Size(57, 13);
+            this.lblEmpleadoLogeado.TabIndex = 16;
+            this.lblEmpleadoLogeado.Text = "Empleado:";
+            // 
+            // txtEmpleadoLogeado
+            // 
+            this.txtEmpleadoLogeado.Location = new System.Drawing.Point(105, 35);
+            this.txtEmpleadoLogeado.Name = "txtEmpleadoLogeado";
+            this.txtEmpleadoLogeado.ReadOnly = true;
+            this.txtEmpleadoLogeado.Size = new System.Drawing.Size(176, 20);
+            this.txtEmpleadoLogeado.TabIndex = 17;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 450);
+            this.Controls.Add(this.txtEmpleadoLogeado);
+            this.Controls.Add(this.lblEmpleadoLogeado);
             this.Controls.Add(this.lblTotalDescuento);
             this.Controls.Add(this.lblTotalCompra);
             this.Controls.Add(this.lblDescuento);
@@ -370,5 +391,7 @@
         private System.Windows.Forms.ToolStripMenuItem comprasPorEmpleadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productoConMenosDe10UnidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaProductoToolStripMenuItem;
+        private System.Windows.Forms.Label lblEmpleadoLogeado;
+        public System.Windows.Forms.TextBox txtEmpleadoLogeado;
     }
 }

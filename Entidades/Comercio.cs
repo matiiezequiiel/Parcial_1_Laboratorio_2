@@ -51,6 +51,7 @@ namespace Entidades
             listaEmpleados = Empleado.HardcodearEmpleados();
             usuariosContraseñas = Empleado.HardcodearUsuariosYPass();
             listaProductos = Producto.HardcodearProductos();
+            listaVentas = Venta.HardcodearVenta();
 
             if(listaClientes.Count>0 && listaEmpleados.Count>0 && listaProductos.Count > 0 && usuariosContraseñas.Count>0)
             {
@@ -120,11 +121,49 @@ namespace Entidades
             
         }
 
-        public static void CargarVenta(List<Producto> productosVendidos)
+        public static void CargarVenta(List<Producto> productosVendidos, string empleadoVenta)
         {
-            Venta miVenta = new Venta(listaVentas.Count + 1, productosVendidos);
-            listaVentas.Add(miVenta);
+            int nroTicket = listaVentas.Count + 1;
+            List<Producto> listaNuevaVenta = new List<Producto>();
 
+            foreach (Producto item in productosVendidos)
+            {
+                string nombre = item.NombreProducto;
+                int stock = item.StockProducto;
+                string categoria = item.CategoriaProducto;
+                int codigo = item.CodigoProducto;
+                double precio = item.PrecioProducto;
+
+                listaNuevaVenta.Add(new Producto(nombre, categoria, precio, stock, codigo));
+            }
+           
+            Venta miVenta = new Venta(nroTicket, listaNuevaVenta);
+            listaVentas.Add(miVenta);
+            CargarTicketAEmpleado(empleadoVenta,nroTicket);
+           
+
+        }
+
+        public static void CargarTicketAEmpleado(string empleado,int nroTicketNuevo)
+        {
+            string[] valores;
+            valores = empleado.Split(' ');
+
+            foreach (Empleado item in listaEmpleados)
+            {
+                if(valores[0]==item.NombrePersona && valores[1]==item.ApellidoPersona)
+                {
+                   
+                        for(int i=0;i<item.TicketsEmpleado.Length;i++)
+                        {
+                              if(item.TicketsEmpleado[i]==0)
+                              {
+                                     item.TicketsEmpleado[i] = nroTicketNuevo;
+                                    break;
+                              }
+                         }
+                }
+            }
         }
         public static void ActualizarListaStock(List<Producto> nuevaListaAct)
         {

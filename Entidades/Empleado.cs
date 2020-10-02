@@ -58,11 +58,11 @@ namespace Entidades
             
             
       
-            empleadosHardcodeados.Add(new Empleado("Apu", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Administrador",10000,new int[] {1,2,3}));
-            empleadosHardcodeados.Add(new Empleado("Manjula", "Nahasamepapetilon", 3934322,new DateTime(2016,01,10), "Administrador", 10000,new int[] { 4, 5, 6 }));
-            empleadosHardcodeados.Add(new Empleado("Sanjay", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[] { 1, 2 }));
-            empleadosHardcodeados.Add(new Empleado("Pahusacheta", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[] { 4, 5, 6 }));
-            empleadosHardcodeados.Add(new Empleado("Jamshed", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[] { 4, 5, 6 }));
+            empleadosHardcodeados.Add(new Empleado("Apu", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Administrador",10000,new int[10] {1,2,3,0,0,0,0,0,0,0}));
+            empleadosHardcodeados.Add(new Empleado("Manjula", "Nahasamepapetilon", 3934322,new DateTime(2016,01,10), "Administrador", 10000,new int[10] { 4, 5, 6, 0, 0, 0, 0, 0, 0, 0 }));
+            empleadosHardcodeados.Add(new Empleado("Sanjay", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[10] { 1, 2, 0, 0, 0, 0, 0, 0, 0,0 }));
+            empleadosHardcodeados.Add(new Empleado("Pahusacheta", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[10] { 4, 5, 6, 0, 0, 0, 0, 0, 0, 0 }));
+            empleadosHardcodeados.Add(new Empleado("Jamshed", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[10] { 4, 5, 6, 0, 0, 0, 0, 0, 0, 0 }));
                         
             return empleadosHardcodeados;
 
@@ -71,11 +71,11 @@ namespace Entidades
         public static Dictionary<string,string> HardcodearUsuariosYPass()
         {
             Dictionary<string, string> miDiccionario = new Dictionary<string, string>();
-            miDiccionario.Add("Apu", "Pass1");
-            miDiccionario.Add("Manjula", "Pass2");
-            miDiccionario.Add("Sanjay", "Pass3");
-            miDiccionario.Add("Pahusacheta", "Pass4");
-            miDiccionario.Add("Jamshed", "Pass5");
+            miDiccionario.Add("Apu Nahasamepapetilon", "Pass1");
+            miDiccionario.Add("Manjula Nahasamepapetilon", "Pass2");
+            miDiccionario.Add("Sanjay Nahasamepapetilon", "Pass3");
+            miDiccionario.Add("Pahusacheta Nahasamepapetilon", "Pass4");
+            miDiccionario.Add("Jamshed Nahasamepapetilon", "Pass5");
 
             return miDiccionario;
         }

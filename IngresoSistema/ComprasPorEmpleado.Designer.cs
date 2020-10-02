@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.lsvEmpleados = new System.Windows.Forms.ListView();
-            this.lsvTicketsVendidos = new System.Windows.Forms.ListView();
-            this.lsvListaCompra = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lsvTicketsVendidos = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lsvListaCompra = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lsvEmpleados
@@ -56,6 +57,16 @@
             this.lsvEmpleados.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lsvEmpleados_ItemCheck);
             this.lsvEmpleados.SelectedIndexChanged += new System.EventHandler(this.lsvEmpleados_SelectedIndexChanged);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Nombre";
+            this.columnHeader1.Width = 77;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Apellido";
+            this.columnHeader2.Width = 104;
+            // 
             // lsvTicketsVendidos
             // 
             this.lsvTicketsVendidos.CheckBoxes = true;
@@ -71,6 +82,11 @@
             this.lsvTicketsVendidos.TabIndex = 1;
             this.lsvTicketsVendidos.UseCompatibleStateImageBehavior = false;
             this.lsvTicketsVendidos.View = System.Windows.Forms.View.Details;
+            this.lsvTicketsVendidos.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lsvTicketsVendidos_ItemCheck);
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Ticket";
             // 
             // lsvListaCompra
             // 
@@ -87,29 +103,27 @@
             this.lsvListaCompra.UseCompatibleStateImageBehavior = false;
             this.lsvListaCompra.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Nombre";
-            this.columnHeader1.Width = 77;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Apellido";
-            this.columnHeader2.Width = 104;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Ticket";
-            // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Producto";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSalir.Location = new System.Drawing.Point(604, 370);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(124, 48);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // ComprasPorEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lsvListaCompra);
             this.Controls.Add(this.lsvTicketsVendidos);
             this.Controls.Add(this.lsvEmpleados);
@@ -130,5 +144,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

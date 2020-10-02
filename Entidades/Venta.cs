@@ -30,18 +30,36 @@ namespace Entidades
             this.listaCompra = listaCompra;
         }
 
+
+        public int NumeroTicket
+        {
+            get { return this.nroTicket; }
+            set { this.nroTicket = value; }
+        }
+
+        public List<Producto> ListaCompra
+        {
+            get { return this.listaCompra; }
+            set { this.listaCompra = value; }
+        }
+
+
+
         public static List<Venta> HardcodearVenta()
         {
             List<Producto> listaProductos = Producto.HardcodearProductos();
-            List<Venta> listaVentas = new List<Venta>();
+      
 
-            listaVentas.Add(new Venta(111111111, listaProductos));
-            listaVentas.Add(new Venta(222222222, listaProductos));
-            listaVentas.Add(new Venta(111111111, listaProductos));
-            listaVentas.Add(new Venta(111111111, listaProductos));
-            listaVentas.Add(new Venta(111111111, listaProductos));
-            listaVentas.Add(new Venta(111111111, listaProductos));
-            listaVentas.Add(new Venta(111111111, listaProductos));
+            List<Venta> listaVentas = new List<Venta>();
+   
+
+            listaVentas.Add(new Venta(1, listaProductos));
+            listaVentas.Add(new Venta(2, listaProductos));
+            listaVentas.Add(new Venta(3, listaProductos));
+            listaVentas.Add(new Venta(4, listaProductos));
+            listaVentas.Add(new Venta(5, listaProductos));
+            listaVentas.Add(new Venta(6, listaProductos));
+           
 
             return listaVentas;
          

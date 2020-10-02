@@ -60,7 +60,7 @@ namespace IngresoSistema
             string nombreEmpleado = "";
             string apellidoEmpleado = "";
             
-            CheckBoxIndices(e.Index);
+            CheckBoxIndicesEmpleados(e.Index);
 
 
             if (e.Index < lsvEmpleados.Items.Count)
@@ -97,13 +97,29 @@ namespace IngresoSistema
 
             foreach (int item in auxEmpleado.TicketsEmpleado)
             {
-                ListViewItem aux = new ListViewItem(item.ToString());
-                lsvTicketsVendidos.Items.Add(aux);
+                if(item!=0)
+                {
+                    ListViewItem aux = new ListViewItem(item.ToString());
+                    lsvTicketsVendidos.Items.Add(aux);
+
+                }
+                
+            }
+            
+        }  
+        private void CargarProductosDeTicket(Venta auxProducto)
+        {
+            lsvListaCompra.Items.Clear();
+
+            foreach (Producto item in auxProducto.ListaCompra)
+            {
+                ListViewItem aux = new ListViewItem(item.NombreProducto);
+                lsvListaCompra.Items.Add(aux);
             }
             
         }
 
-        private void CheckBoxIndices(int indice)
+        private void CheckBoxIndicesEmpleados(int indice)
         {
 
             foreach (ListViewItem auxLista in lsvEmpleados.Items)
@@ -115,6 +131,62 @@ namespace IngresoSistema
 
             }
         }
+        private void CheckBoxIndicesTicket(int indice)
+        {
 
+            foreach (ListViewItem auxLista in lsvTicketsVendidos.Items)
+            {
+                if (indice != auxLista.Index)
+                {
+                    auxLista.Checked = false;
+                }
+
+            }
+        }
+
+        private void lsvTicketsVendidos_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+
+            string nroTicketString = "";
+            int nroTicket=0;
+            
+
+            CheckBoxIndicesTicket(e.Index);
+
+
+            if (e.Index < lsvTicketsVendidos.Items.Count)
+            {
+                foreach (ListViewItem auxLista in lsvTicketsVendidos.Items)
+                {
+                    if (e.Index == auxLista.Index)
+                    {
+                        nroTicketString = auxLista.SubItems[0].Text;
+                        int.TryParse(nroTicketString, out nroTicket);
+                        break;
+
+                    }
+                }
+
+            }
+
+
+            foreach (Venta item in listaVentas)
+            {
+                if (nroTicket == item.NumeroTicket)
+                {
+                    CargarProductosDeTicket(item);
+                    break;
+                }
+            }
+
+        }
+
+        
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+         
+        }
     }
 }

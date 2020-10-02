@@ -18,6 +18,7 @@ namespace IngresoSistema
         List<Producto> listaAuxProd = new List<Producto>();
         List<Cliente> listaAuxCliente = new List<Cliente>();
         List<Producto> carroDeCompras = new List<Producto>();
+   
         
         public MenuPrincipal()
         {
@@ -26,7 +27,7 @@ namespace IngresoSistema
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-                    
+            
             CargarMenuCompras(false);
             CargarListaCliente();
             CargarListaProducto();
@@ -46,6 +47,8 @@ namespace IngresoSistema
         {
             if (estado)
             {
+                lblEmpleadoLogeado.Visible = true;
+                txtEmpleadoLogeado.Visible = true;
                 lblCarrito.Visible = true;
                 lblDescuento.Visible = true;
                 lblListaClientes.Visible = true;
@@ -62,6 +65,8 @@ namespace IngresoSistema
             }
             else
             {
+                lblEmpleadoLogeado.Visible = false;
+                txtEmpleadoLogeado.Visible = false;
                 lblCarrito.Visible = false;
                 lblDescuento.Visible = false;
                 lblListaClientes.Visible = false;
@@ -319,7 +324,7 @@ namespace IngresoSistema
         {
             if(carroDeCompras.Count>0)
             {
-                Comercio.CargarVenta(carroDeCompras);
+                Comercio.CargarVenta(carroDeCompras,this.txtEmpleadoLogeado.Text);
                 Comercio.ActualizarListaStock(listaAuxProdEnCompra);
                 listaAuxProdEnCompra.Clear();
                 lsvCarrito.Items.Clear();
@@ -351,5 +356,7 @@ namespace IngresoSistema
             this.Hide();
             formCompraPorEmpleado.Show();
         }
+
+        
     }
 }

@@ -40,7 +40,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(30, 58);
+            this.lblUsuario.Location = new System.Drawing.Point(12, 58);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 0;
@@ -49,7 +49,7 @@
             // lblPass
             // 
             this.lblPass.AutoSize = true;
-            this.lblPass.Location = new System.Drawing.Point(30, 102);
+            this.lblPass.Location = new System.Drawing.Point(9, 102);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(61, 13);
             this.lblPass.TabIndex = 1;
@@ -57,17 +57,17 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(97, 55);
+            this.txtUsuario.Location = new System.Drawing.Point(76, 55);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(149, 20);
             this.txtUsuario.TabIndex = 2;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(97, 99);
+            this.txtPass.Location = new System.Drawing.Point(76, 99);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(100, 20);
+            this.txtPass.Size = new System.Drawing.Size(149, 20);
             this.txtPass.TabIndex = 3;
             // 
             // btnInicio
@@ -83,7 +83,7 @@
             // lblPuesto
             // 
             this.lblPuesto.AutoSize = true;
-            this.lblPuesto.Location = new System.Drawing.Point(30, 139);
+            this.lblPuesto.Location = new System.Drawing.Point(15, 139);
             this.lblPuesto.Name = "lblPuesto";
             this.lblPuesto.Size = new System.Drawing.Size(40, 13);
             this.lblPuesto.TabIndex = 5;
@@ -91,10 +91,10 @@
             // 
             // txtPuesto
             // 
-            this.txtPuesto.Location = new System.Drawing.Point(97, 136);
+            this.txtPuesto.Location = new System.Drawing.Point(77, 136);
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.ReadOnly = true;
-            this.txtPuesto.Size = new System.Drawing.Size(100, 20);
+            this.txtPuesto.Size = new System.Drawing.Size(149, 20);
             this.txtPuesto.TabIndex = 6;
             // 
             // UserPass
