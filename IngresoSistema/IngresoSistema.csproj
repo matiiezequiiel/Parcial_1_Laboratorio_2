@@ -151,5 +151,11 @@
       <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO PNG K-EMART.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apu OK.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

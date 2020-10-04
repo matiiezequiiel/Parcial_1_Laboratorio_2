@@ -18,6 +18,7 @@ namespace IngresoSistema
         public UserPass()
         {
             InitializeComponent();
+           
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace IngresoSistema
 
             if(Comercio.validarUsuario(usuario,pass))
             {
-                MessageBox.Show("Acceso correcto");
+                MessageBox.Show("Acceso correcto","KWIK-E MART",MessageBoxButtons.OK);
                 this.Hide();
 
                 if (privilegios!="Administrador")
@@ -50,7 +51,7 @@ namespace IngresoSistema
             }
             else
             {
-                MessageBox.Show("Acceso fallido");
+                MessageBox.Show("Acceso fallido","KWIK-E MART", MessageBoxButtons.OK);
             }
            
             Comercio.CargarHardcodeo();
@@ -58,9 +59,21 @@ namespace IngresoSistema
             
         }
 
+       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormIngresoSistema formInicio = new FormIngresoSistema();
+            formInicio.Show();
+        }
+
         private void UserPass_Load(object sender, EventArgs e)
         {
+            txtPass.Select();
 
         }
+
+   
     }
 }

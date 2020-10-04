@@ -63,9 +63,29 @@ namespace IngresoSistema.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Apu_OK {
+            get {
+                object obj = ResourceManager.GetObject("Apu OK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap latest {
             get {
                 object obj = ResourceManager.GetObject("latest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_PNG_K_EMART {
+            get {
+                object obj = ResourceManager.GetObject("LOGO PNG K-EMART", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

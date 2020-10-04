@@ -1,4 +1,6 @@
-﻿namespace IngresoSistema
+﻿using System.Windows.Forms;
+
+namespace IngresoSistema
 {
     partial class FormIngresoSistema
     {
@@ -31,7 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngresoSistema));
             this.label1 = new System.Windows.Forms.Label();
             this.dtgLogin = new System.Windows.Forms.DataGridView();
-            this.chcBox = new System.Windows.Forms.CheckBox();
             this.s = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDeIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +40,7 @@
             this.puestoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sueldoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chcBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgLogin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,20 +49,21 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(115, 28);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(103, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 48);
+            this.label1.Size = new System.Drawing.Size(350, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "¿Quien es usted?";
             // 
             // dtgLogin
             // 
-            this.dtgLogin.AllowDrop = true;
             this.dtgLogin.AllowUserToAddRows = false;
             this.dtgLogin.AllowUserToDeleteRows = false;
             this.dtgLogin.AllowUserToResizeColumns = false;
             this.dtgLogin.AllowUserToResizeRows = false;
+            this.dtgLogin.BackgroundColor = System.Drawing.Color.LightCyan;
+            this.dtgLogin.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dtgLogin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgLogin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.s,
@@ -70,25 +73,22 @@
             this.puestoEmpleado,
             this.dniEmpleado,
             this.sueldoEmpleado});
+            this.dtgLogin.GridColor = System.Drawing.Color.White;
             this.dtgLogin.Location = new System.Drawing.Point(79, 117);
             this.dtgLogin.MultiSelect = false;
             this.dtgLogin.Name = "dtgLogin";
+            this.dtgLogin.ReadOnly = true;
+            this.dtgLogin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtgLogin.Size = new System.Drawing.Size(397, 274);
             this.dtgLogin.TabIndex = 3;
             this.dtgLogin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgLogin_CellContentClick);
-            // 
-            // chcBox
-            // 
-            this.chcBox.Location = new System.Drawing.Point(0, 0);
-            this.chcBox.Name = "chcBox";
-            this.chcBox.Size = new System.Drawing.Size(104, 24);
-            this.chcBox.TabIndex = 0;
             // 
             // s
             // 
             this.s.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.s.HeaderText = "Eleccion";
             this.s.Name = "s";
+            this.s.ReadOnly = true;
             this.s.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.s.Width = 54;
             // 
@@ -105,6 +105,7 @@
             this.fechaDeIngreso.DataPropertyName = "FechaIngreso";
             this.fechaDeIngreso.HeaderText = "Fecha de Ingreso";
             this.fechaDeIngreso.Name = "fechaDeIngreso";
+            this.fechaDeIngreso.ReadOnly = true;
             this.fechaDeIngreso.Visible = false;
             // 
             // apellidoEmpleado
@@ -128,6 +129,7 @@
             this.dniEmpleado.DataPropertyName = "dniPersona";
             this.dniEmpleado.HeaderText = "DNI";
             this.dniEmpleado.Name = "dniEmpleado";
+            this.dniEmpleado.ReadOnly = true;
             this.dniEmpleado.Visible = false;
             // 
             // sueldoEmpleado
@@ -135,13 +137,21 @@
             this.sueldoEmpleado.DataPropertyName = "sueldoEmpleado";
             this.sueldoEmpleado.HeaderText = "Sueldo";
             this.sueldoEmpleado.Name = "sueldoEmpleado";
+            this.sueldoEmpleado.ReadOnly = true;
             this.sueldoEmpleado.Visible = false;
+            // 
+            // chcBox
+            // 
+            this.chcBox.Location = new System.Drawing.Point(0, 0);
+            this.chcBox.Name = "chcBox";
+            this.chcBox.Size = new System.Drawing.Size(104, 24);
+            this.chcBox.TabIndex = 0;
             // 
             // FormIngresoSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.DarkOrange;
             this.BackgroundImage = global::IngresoSistema.Properties.Resources.latest;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(570, 460);
@@ -152,7 +162,7 @@
             this.MaximizeBox = false;
             this.Name = "FormIngresoSistema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "blo";
+            this.Text = "Inicio Sesion";
             this.Load += new System.EventHandler(this.FormIngresoSistema_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgLogin)).EndInit();
             this.ResumeLayout(false);
