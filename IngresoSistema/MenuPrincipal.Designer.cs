@@ -105,7 +105,7 @@
             this.comprasPorEmpleadoToolStripMenuItem,
             this.productoConMenosDe10UnidadesToolStripMenuItem});
             this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
-            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadosToolStripMenuItem.Text = "Listados";
             // 
             // stockDeProductosToolStripMenuItem
@@ -113,6 +113,7 @@
             this.stockDeProductosToolStripMenuItem.Name = "stockDeProductosToolStripMenuItem";
             this.stockDeProductosToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.stockDeProductosToolStripMenuItem.Text = "Stock de productos";
+            this.stockDeProductosToolStripMenuItem.Click += new System.EventHandler(this.stockDeProductosToolStripMenuItem_Click);
             // 
             // comprasPorEmpleadoToolStripMenuItem
             // 
@@ -126,12 +127,14 @@
             this.productoConMenosDe10UnidadesToolStripMenuItem.Name = "productoConMenosDe10UnidadesToolStripMenuItem";
             this.productoConMenosDe10UnidadesToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.productoConMenosDe10UnidadesToolStripMenuItem.Text = "Producto con menos de 10 unidades";
+            this.productoConMenosDe10UnidadesToolStripMenuItem.Click += new System.EventHandler(this.productoConMenosDe10UnidadesToolStripMenuItem_Click);
             // 
             // altaProductoToolStripMenuItem
             // 
             this.altaProductoToolStripMenuItem.Name = "altaProductoToolStripMenuItem";
-            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.altaProductoToolStripMenuItem.Text = "Alta Producto";
+            this.altaProductoToolStripMenuItem.Click += new System.EventHandler(this.altaProductoToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 

@@ -101,7 +101,7 @@ namespace IngresoSistema
 
         }
 
-        private void CargarListaProducto()
+        public void CargarListaProducto()
         {
 
             lsvProductos.Items.Clear();
@@ -192,8 +192,19 @@ namespace IngresoSistema
 
         private void lsvProductos_MouseDown(object sender, MouseEventArgs e)
         {
-            int linea = lsvProductos.HitTest(e.X, e.Y).Item.Index;
-            lsvProductos.DoDragDrop(linea, DragDropEffects.Copy);
+            try
+            {
+                int linea = lsvProductos.HitTest(e.X, e.Y).Item.Index;
+                lsvProductos.DoDragDrop(linea, DragDropEffects.Copy);
+            }
+            catch (Exception)
+            {
+               
+                
+            }
+           
+               
+           
         }
 
         private void lsvCarrito_DragOver(object sender, DragEventArgs e)
@@ -357,6 +368,25 @@ namespace IngresoSistema
             formCompraPorEmpleado.Show();
         }
 
-        
+        private void stockDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaStock formStock = new ListaStock();
+            this.Hide();
+            formStock.Show();
+        }
+
+        private void altaProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarProducto formAgregarProducto = new AgregarProducto(this);
+            this.Hide();
+            formAgregarProducto.Show();
+        }
+
+        private void productoConMenosDe10UnidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StockMenosProductos formStock10Un = new StockMenosProductos();
+            this.Hide();
+            formStock10Un.Show();
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace Entidades
         }
 
         public static Producto AgregarProducto (Producto auxProducto)
-        {
+        { 
             listaProductos.Add(auxProducto);
             return auxProducto;
         }

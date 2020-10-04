@@ -14,7 +14,7 @@ namespace IngresoSistema
 {
     public partial class UserPass : Form
     {
-        
+        public static MenuPrincipal formMenu = new MenuPrincipal();
         public UserPass()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace IngresoSistema
 
                 if (privilegios!="Administrador")
                 {
-                    MenuPrincipal formMenu = new MenuPrincipal();
+                   
                     formMenu.gestionDelNegocioToolStripMenuItem.Enabled = false;
                     formMenu.txtEmpleadoLogeado.Text = usuario;
                     formMenu.Show();
@@ -41,7 +41,7 @@ namespace IngresoSistema
                 }
                 else
                 {
-                    MenuPrincipal formMenu = new MenuPrincipal();
+  
                     formMenu.txtEmpleadoLogeado.Text = usuario;
                     formMenu.Show();
                 }
