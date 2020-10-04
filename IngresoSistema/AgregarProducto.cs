@@ -24,24 +24,7 @@ namespace IngresoSistema
             
         }
 
-     
-
-        private void AgregarProducto_Load(object sender, EventArgs e)
-        {
-            CargarCategoriaProductos();
-        }
-
-        private void CargarCategoriaProductos()
-        {
-            
-            listaProductos = Comercio.RetornarListaProductos();
-
-            foreach (Producto item in listaProductos)
-            {
-                cmbCategoria.Items.Add(item.CategoriaProducto);
-            }
-        }
-
+   
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Producto nuevoProducto = new Producto();

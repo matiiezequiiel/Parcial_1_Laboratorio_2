@@ -90,7 +90,7 @@
             // nuevaCompraToolStripMenuItem
             // 
             this.nuevaCompraToolStripMenuItem.Name = "nuevaCompraToolStripMenuItem";
-            this.nuevaCompraToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.nuevaCompraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevaCompraToolStripMenuItem.Text = "Nueva compra";
             this.nuevaCompraToolStripMenuItem.Click += new System.EventHandler(this.nuevaCompraToolStripMenuItem_Click);
             // 
@@ -320,7 +320,7 @@
             // 
             this.lblDescuento.AutoSize = true;
             this.lblDescuento.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescuento.Location = new System.Drawing.Point(476, 398);
+            this.lblDescuento.Location = new System.Drawing.Point(476, 393);
             this.lblDescuento.Name = "lblDescuento";
             this.lblDescuento.Size = new System.Drawing.Size(74, 18);
             this.lblDescuento.TabIndex = 13;
@@ -329,17 +329,19 @@
             // lblTotalCompra
             // 
             this.lblTotalCompra.AutoSize = true;
-            this.lblTotalCompra.Location = new System.Drawing.Point(547, 370);
+            this.lblTotalCompra.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCompra.Location = new System.Drawing.Point(547, 368);
             this.lblTotalCompra.Name = "lblTotalCompra";
-            this.lblTotalCompra.Size = new System.Drawing.Size(0, 13);
+            this.lblTotalCompra.Size = new System.Drawing.Size(0, 19);
             this.lblTotalCompra.TabIndex = 14;
             // 
             // lblTotalDescuento
             // 
             this.lblTotalDescuento.AutoSize = true;
-            this.lblTotalDescuento.Location = new System.Drawing.Point(547, 398);
+            this.lblTotalDescuento.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalDescuento.Location = new System.Drawing.Point(566, 392);
             this.lblTotalDescuento.Name = "lblTotalDescuento";
-            this.lblTotalDescuento.Size = new System.Drawing.Size(0, 13);
+            this.lblTotalDescuento.Size = new System.Drawing.Size(0, 19);
             this.lblTotalDescuento.TabIndex = 15;
             // 
             // lblEmpleadoLogeado

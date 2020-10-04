@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComprasPorEmpleado));
             this.lsvEmpleados = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,10 +41,12 @@
             // 
             // lsvEmpleados
             // 
+            this.lsvEmpleados.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lsvEmpleados.CheckBoxes = true;
             this.lsvEmpleados.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+            this.lsvEmpleados.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvEmpleados.FullRowSelect = true;
             this.lsvEmpleados.GridLines = true;
             this.lsvEmpleados.HideSelection = false;
@@ -69,9 +72,11 @@
             // 
             // lsvTicketsVendidos
             // 
+            this.lsvTicketsVendidos.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lsvTicketsVendidos.CheckBoxes = true;
             this.lsvTicketsVendidos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3});
+            this.lsvTicketsVendidos.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvTicketsVendidos.FullRowSelect = true;
             this.lsvTicketsVendidos.GridLines = true;
             this.lsvTicketsVendidos.HideSelection = false;
@@ -87,11 +92,14 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Ticket";
+            this.columnHeader3.Width = 80;
             // 
             // lsvListaCompra
             // 
+            this.lsvListaCompra.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lsvListaCompra.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4});
+            this.lsvListaCompra.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvListaCompra.FullRowSelect = true;
             this.lsvListaCompra.GridLines = true;
             this.lsvListaCompra.HideSelection = false;
@@ -106,6 +114,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Producto";
+            this.columnHeader4.Width = 91;
             // 
             // btnSalir
             // 
@@ -122,14 +131,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.DarkOrange;
+            this.ClientSize = new System.Drawing.Size(789, 450);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lsvListaCompra);
             this.Controls.Add(this.lsvTicketsVendidos);
             this.Controls.Add(this.lsvEmpleados);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ComprasPorEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "v";
+            this.Text = "Compras por empleado";
             this.Load += new System.EventHandler(this.ComprasPorEmpleado_Load);
             this.ResumeLayout(false);
 
