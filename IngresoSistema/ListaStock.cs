@@ -49,5 +49,7 @@ namespace IngresoSistema
             this.Close();
             UserPass.formMenu.Show();
         }
+
+     
     }
 }

@@ -90,7 +90,7 @@
             // nuevaCompraToolStripMenuItem
             // 
             this.nuevaCompraToolStripMenuItem.Name = "nuevaCompraToolStripMenuItem";
-            this.nuevaCompraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaCompraToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.nuevaCompraToolStripMenuItem.Text = "Nueva compra";
             this.nuevaCompraToolStripMenuItem.Click += new System.EventHandler(this.nuevaCompraToolStripMenuItem_Click);
             // 
@@ -212,9 +212,9 @@
             this.lsvProductos.FullRowSelect = true;
             this.lsvProductos.GridLines = true;
             this.lsvProductos.HideSelection = false;
-            this.lsvProductos.Location = new System.Drawing.Point(253, 101);
+            this.lsvProductos.Location = new System.Drawing.Point(252, 101);
             this.lsvProductos.Name = "lsvProductos";
-            this.lsvProductos.Size = new System.Drawing.Size(151, 253);
+            this.lsvProductos.Size = new System.Drawing.Size(162, 253);
             this.lsvProductos.TabIndex = 6;
             this.lsvProductos.UseCompatibleStateImageBehavior = false;
             this.lsvProductos.View = System.Windows.Forms.View.Details;
@@ -223,7 +223,7 @@
             // nombreProducto
             // 
             this.nombreProducto.Text = "Producto";
-            this.nombreProducto.Width = 53;
+            this.nombreProducto.Width = 63;
             // 
             // stockProducto
             // 

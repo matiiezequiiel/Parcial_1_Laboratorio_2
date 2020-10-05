@@ -38,11 +38,13 @@
             // 
             // lsvListaStock
             // 
+            this.lsvListaStock.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lsvListaStock.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lsvListaStock.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvListaStock.HideSelection = false;
             this.lsvListaStock.Location = new System.Drawing.Point(32, 21);
             this.lsvListaStock.Name = "lsvListaStock";
@@ -72,9 +74,10 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(90, 300);
+            this.btnSalir.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(89, 300);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(146, 26);
+            this.btnSalir.Size = new System.Drawing.Size(146, 35);
             this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -84,6 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(331, 347);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lsvListaStock);

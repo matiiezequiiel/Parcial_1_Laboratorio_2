@@ -27,7 +27,8 @@ namespace IngresoSistema
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@" C:\Users\maguirre\source\repos\Parcial_1_Laboratorio_2\AperturaPuerta.wav");
+            player.Play();
             CargarMenuCompras(false);
             CargarListaCliente();
             CargarListaProducto();
@@ -36,6 +37,8 @@ namespace IngresoSistema
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@" C:\Users\maguirre\source\repos\Parcial_1_Laboratorio_2\AperturaPuerta.wav");
+            player.Play();
         }
 
         private void nuevaCompraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -345,7 +348,9 @@ namespace IngresoSistema
                 carroDeCompras.Clear();
                 CargarListaProducto();
 
-                MessageBox.Show("Compra realizada correctamente.");
+                MessageBox.Show("GRACIAS VUELVA PRONTOS!!!");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@" C:\Users\maguirre\source\repos\Parcial_1_Laboratorio_2\GraciasVuelvaPronto.wav");
+                player.Play();
 
             }
             else
@@ -356,7 +361,7 @@ namespace IngresoSistema
 
         private void lblNuevoCliente_Click(object sender, EventArgs e)
         {
-            NuevoCliente formAgregarCliente = new NuevoCliente();
+            NuevoCliente formAgregarCliente = new NuevoCliente(this);
             this.Hide();
             formAgregarCliente.Show();
         }

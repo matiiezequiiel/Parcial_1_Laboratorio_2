@@ -89,6 +89,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(111, 20);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
             // 
             // txtPrecio
             // 
@@ -96,6 +97,8 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(111, 20);
             this.txtPrecio.TabIndex = 5;
+            this.txtPrecio.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrecio_Validating);
+            this.txtPrecio.Validated += new System.EventHandler(this.txtPrecio_Validated);
             // 
             // txtStockInicial
             // 
@@ -103,11 +106,14 @@
             this.txtStockInicial.Name = "txtStockInicial";
             this.txtStockInicial.Size = new System.Drawing.Size(111, 20);
             this.txtStockInicial.TabIndex = 6;
+            this.txtStockInicial.Validating += new System.ComponentModel.CancelEventHandler(this.txtStockInicial_Validating);
+            this.txtStockInicial.Validated += new System.EventHandler(this.txtStockInicial_Validated);
             // 
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Items.AddRange(new object[] {
+            "Elegir opcion",
             "Lacteos",
             "Frutas",
             "Verduras",
@@ -120,6 +126,8 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(111, 21);
             this.cmbCategoria.TabIndex = 7;
+            this.cmbCategoria.Validating += new System.ComponentModel.CancelEventHandler(this.cmbCategoria_Validating);
+            this.cmbCategoria.Validated += new System.EventHandler(this.cmbCategoria_Validated);
             // 
             // btnAgregar
             // 
@@ -172,7 +180,9 @@
             this.Controls.Add(this.lblNombre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AgregarProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarProducto";
+            this.Load += new System.EventHandler(this.AgregarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

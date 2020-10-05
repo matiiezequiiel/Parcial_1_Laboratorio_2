@@ -37,6 +37,8 @@
             this.lsvListaCompra = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSalir = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lsvEmpleados
@@ -50,7 +52,7 @@
             this.lsvEmpleados.FullRowSelect = true;
             this.lsvEmpleados.GridLines = true;
             this.lsvEmpleados.HideSelection = false;
-            this.lsvEmpleados.Location = new System.Drawing.Point(23, 64);
+            this.lsvEmpleados.Location = new System.Drawing.Point(24, 88);
             this.lsvEmpleados.MultiSelect = false;
             this.lsvEmpleados.Name = "lsvEmpleados";
             this.lsvEmpleados.Size = new System.Drawing.Size(185, 287);
@@ -80,7 +82,7 @@
             this.lsvTicketsVendidos.FullRowSelect = true;
             this.lsvTicketsVendidos.GridLines = true;
             this.lsvTicketsVendidos.HideSelection = false;
-            this.lsvTicketsVendidos.Location = new System.Drawing.Point(271, 64);
+            this.lsvTicketsVendidos.Location = new System.Drawing.Point(277, 88);
             this.lsvTicketsVendidos.MultiSelect = false;
             this.lsvTicketsVendidos.Name = "lsvTicketsVendidos";
             this.lsvTicketsVendidos.Size = new System.Drawing.Size(185, 287);
@@ -103,7 +105,7 @@
             this.lsvListaCompra.FullRowSelect = true;
             this.lsvListaCompra.GridLines = true;
             this.lsvListaCompra.HideSelection = false;
-            this.lsvListaCompra.Location = new System.Drawing.Point(514, 64);
+            this.lsvListaCompra.Location = new System.Drawing.Point(517, 88);
             this.lsvListaCompra.MultiSelect = false;
             this.lsvListaCompra.Name = "lsvListaCompra";
             this.lsvListaCompra.Size = new System.Drawing.Size(185, 287);
@@ -119,7 +121,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnSalir.Location = new System.Drawing.Point(604, 370);
+            this.btnSalir.Location = new System.Drawing.Point(604, 390);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(124, 48);
             this.btnSalir.TabIndex = 3;
@@ -127,12 +129,23 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::IngresoSistema.Properties.Resources.LOGO_PNG_K_EMART;
+            this.pictureBox1.Location = new System.Drawing.Point(190, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(352, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // ComprasPorEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(789, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lsvListaCompra);
             this.Controls.Add(this.lsvTicketsVendidos);
@@ -142,6 +155,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compras por empleado";
             this.Load += new System.EventHandler(this.ComprasPorEmpleado_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,5 +170,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
