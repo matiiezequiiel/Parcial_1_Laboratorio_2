@@ -206,9 +206,7 @@ namespace IngresoSistema
                
                 
             }
-           
-               
-           
+  
         }
 
         private void lsvCarrito_DragOver(object sender, DragEventArgs e)
@@ -251,6 +249,11 @@ namespace IngresoSistema
                         else
                         {
                             MessageBox.Show("No hay stock del producto seleccionado");
+                            if(lsvCarrito.Items.Count==0)
+                            {
+                                lsvClientes.CheckBoxes = true;
+                            }
+                            
                         }
                         
                     }

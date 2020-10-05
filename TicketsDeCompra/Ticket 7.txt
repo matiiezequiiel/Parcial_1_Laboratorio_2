@@ -1,0 +1,23 @@
+Usted fue atendido por: Apu Nahasamepapetilon
+Fecha: 5/10/2020 16:36:52
+Cliente: Marge Simpson
+
+
+Lista de productos: 
+------------------------------
+Banana           $120
+Banana           $120
+Banana           $120
+Banana           $120
+Banana           $120
+Banana           $120
+Banana           $120
+Banana           $120
+Banana           $120
+Banana           $120
+------------------------------
+Total: $1200
+
+Descuento: $180
+
+Nro de ticket: 7
