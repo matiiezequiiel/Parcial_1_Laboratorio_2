@@ -1,0 +1,10 @@
+Usted fue atendido por: Apu Nahasamepapetilon
+Fecha: 1/1/0001 00:00:00
+Cliente: System.Windows.Forms.ListView+SelectedListViewItemCollection
+Lista de productos: 
+Harina100
+Galletitas111
+Banana120
+Total: $331
+Descuento: $49,65
+Nro de ticket: 7

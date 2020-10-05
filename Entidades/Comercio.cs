@@ -121,7 +121,7 @@ namespace Entidades
             
         }
 
-        public static void CargarVenta(List<Producto> productosVendidos, string empleadoVenta)
+        public static int CargarVenta(List<Producto> productosVendidos, string empleadoVenta)
         {
             int nroTicket = listaVentas.Count + 1;
             List<Producto> listaNuevaVenta = new List<Producto>();
@@ -140,6 +140,7 @@ namespace Entidades
             Venta miVenta = new Venta(nroTicket, listaNuevaVenta);
             listaVentas.Add(miVenta);
             CargarTicketAEmpleado(empleadoVenta,nroTicket);
+            return nroTicket;
            
 
         }

@@ -9,3 +9,4 @@ C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\Entidades\bin\Debug\Entid
 C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entidades.dll
 C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entidades.pdb
+C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -239,10 +240,19 @@ namespace IngresoSistema
                 {
                     if (lineaArrastrada == aux.Index)
                     {
-                        ListViewItem nuevoProducto = new ListViewItem(aux.Text);
-                        lsvCarrito.Items.Add(nuevoProducto);
-                        ActualizarStockListaAux(aux.Text);
-                        break;
+                        if(aux.SubItems[1].Text!="0")
+                        {
+                            ListViewItem nuevoProducto = new ListViewItem(aux.Text);
+                            lsvCarrito.Items.Add(nuevoProducto);
+                            ActualizarStockListaAux(aux.Text);
+                            break;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("No hay stock del producto seleccionado");
+                        }
+                        
                     }
                 }
 
@@ -336,9 +346,12 @@ namespace IngresoSistema
 
         private void btnConfirmarCompra_Click(object sender, EventArgs e)
         {
+            int nroTicket;
+
             if(carroDeCompras.Count>0)
             {
-                Comercio.CargarVenta(carroDeCompras,this.txtEmpleadoLogeado.Text);
+                nroTicket=Comercio.CargarVenta(carroDeCompras,this.txtEmpleadoLogeado.Text);
+                GenerarTicket(carroDeCompras,nroTicket);
                 Comercio.ActualizarListaStock(listaAuxProdEnCompra);
                 listaAuxProdEnCompra.Clear();
                 lsvCarrito.Items.Clear();
@@ -357,6 +370,48 @@ namespace IngresoSistema
             {
                 MessageBox.Show("El carrito esta vacio.");
             }
+        }
+
+        private void GenerarTicket(List<Producto> carritoDeCompras,int nroTicket)
+        {
+            string nombreTicket = nroTicket.ToString();
+            Stream fs = new FileStream("C:/Users/maguirre/source/repos/Parcial_1_Laboratorio_2/TicketsDeCompra/Ticket " + nroTicket+".txt", FileMode.Create, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+         
+
+            sw.WriteLine("Usted fue atendido por: " + this.txtEmpleadoLogeado.Text);
+            sw.WriteLine("Fecha: " + DateTime.Now);
+
+            foreach (ListViewItem item in lsvClientes.Items)
+            {
+                if (item.Checked == true)
+                {
+                    sw.WriteLine("Cliente: " + item.Text + " " + item.SubItems[1].Text);
+                  
+                }
+ 
+            }
+
+            sw.WriteLine("");
+            sw.WriteLine("");
+            sw.WriteLine("Lista de productos: ");
+            sw.WriteLine("------------------------------");
+
+            foreach (Producto item in carritoDeCompras)
+            {
+                sw.WriteLine(item.NombreProducto+"           " +"$"+ item.PrecioProducto);
+            }
+            sw.WriteLine("------------------------------");
+
+            sw.WriteLine("Total: " + this.lblTotalCompra.Text);
+            sw.WriteLine("");
+            sw.WriteLine("Descuento: " + this.lblTotalDescuento.Text);
+            sw.WriteLine("");
+            sw.WriteLine("Nro de ticket: " + nroTicket);
+
+            sw.Close();
+
+
         }
 
         private void lblNuevoCliente_Click(object sender, EventArgs e)
