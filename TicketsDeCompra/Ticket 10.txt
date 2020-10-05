@@ -1,0 +1,23 @@
+Usted fue atendido por: 
+Fecha: 5/10/2020 20:28:47
+Cliente: Matias Aguirre
+
+
+Lista de productos: 
+------------------------------
+Pan           $32
+fjad           $442
+Nuggets           $150
+Jamon           $180
+Jamon           $180
+Jamon           $180
+Jamon           $180
+Jamon           $180
+Jamon           $180
+Jamon           $180
+------------------------------
+Total: $1884
+
+Descuento: 
+
+Nro de ticket: 10

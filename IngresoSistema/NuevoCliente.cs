@@ -37,9 +37,10 @@ namespace IngresoSistema
 
                 nuevoCliente = new Cliente(nombre, apellido, dni);
                 Comercio.AgregarCliente(nuevoCliente);
-                MenuPrincipal menu = new MenuPrincipal();
+                // MenuPrincipal menu = new MenuPrincipal();
+                auxMenu.CargarListaCliente();
                 this.Close();
-                menu.Show();
+                UserPass.formMenu.Show();
             }
             else
             {
@@ -133,6 +134,11 @@ namespace IngresoSistema
         {
             this.Close();
             UserPass.formMenu.Show();
+        }
+
+        private void NuevoCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

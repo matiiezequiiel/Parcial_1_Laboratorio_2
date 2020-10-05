@@ -88,8 +88,9 @@ namespace IngresoSistema
 
         }
 
-        private void CargarListaCliente()
+        public void CargarListaCliente()
         {
+            lsvClientes.Items.Clear();
            
             listaAuxCliente = Comercio.RetornarListaClientes();
 
@@ -110,6 +111,7 @@ namespace IngresoSistema
 
             lsvProductos.Items.Clear();
             listaAuxProd = Comercio.RetornarListaProductos();
+            listaAuxProdEnCompra.Clear();
 
             foreach (Producto item in listaAuxProd)
             {
