@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Empleado :Persona
+    public class Empleado : Persona
     {
         DateTime fechaDeIngreso;
         string puestoEmpleado;
@@ -19,10 +19,10 @@ namespace Entidades
             ticketsVendidos = new int[10];
             this.puestoEmpleado = "Sin puesto";
             this.sueldoEmpleado = 0;
-        }    
-        public Empleado(string nombre, string apellido,int dni, DateTime fechaDeIngreso,string puesto,float sueldo,int[] ticketsVendidos )
+        }
+        public Empleado(string nombre, string apellido, int dni, DateTime fechaDeIngreso, string puesto, float sueldo, int[] ticketsVendidos)
         {
-            
+
             this.nombrePersona = nombre;
             this.apellidoPersona = apellido;
             this.dniPersona = dni;
@@ -55,20 +55,20 @@ namespace Entidades
         public static List<Empleado> HardcodearEmpleados()
         {
             List<Empleado> empleadosHardcodeados = new List<Empleado>();
-            
-            
-      
-            empleadosHardcodeados.Add(new Empleado("Apu", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Administrador",10000,new int[10] {1,2,3,0,0,0,0,0,0,0}));
-            empleadosHardcodeados.Add(new Empleado("Manjula", "Nahasamepapetilon", 3934322,new DateTime(2016,01,10), "Administrador", 10000,new int[10] { 4, 5, 6, 0, 0, 0, 0, 0, 0, 0 }));
-            empleadosHardcodeados.Add(new Empleado("Sanjay", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[10] { 1, 2, 0, 0, 0, 0, 0, 0, 0,0 }));
-            empleadosHardcodeados.Add(new Empleado("Pahusacheta", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[10] { 4, 5, 6, 0, 0, 0, 0, 0, 0, 0 }));
-            empleadosHardcodeados.Add(new Empleado("Jamshed", "Nahasamepapetilon", 3937594,new DateTime(2018,03,15),"Cajero",10000, new int[10] { 4, 5, 6, 0, 0, 0, 0, 0, 0, 0 }));
-                        
+
+
+
+            empleadosHardcodeados.Add(new Empleado("Apu", "Nahasamepapetilon", 3937594, new DateTime(2018, 03, 15), "Administrador", 10000, new int[10] { 1, 2, 3, 0, 0, 0, 0, 0, 0, 0 }));
+            empleadosHardcodeados.Add(new Empleado("Manjula", "Nahasamepapetilon", 3934322, new DateTime(2016, 01, 10), "Administrador", 10000, new int[10] { 4, 5, 6, 0, 0, 0, 0, 0, 0, 0 }));
+            empleadosHardcodeados.Add(new Empleado("Sanjay", "Nahasamepapetilon", 3937594, new DateTime(2018, 03, 15), "Cajero", 10000, new int[10] { 1, 2, 0, 0, 0, 0, 0, 0, 0, 0 }));
+            empleadosHardcodeados.Add(new Empleado("Pahusacheta", "Nahasamepapetilon", 3937594, new DateTime(2018, 03, 15), "Cajero", 10000, new int[10] { 4, 5, 6, 0, 0, 0, 0, 0, 0, 0 }));
+            empleadosHardcodeados.Add(new Empleado("Jamshed", "Nahasamepapetilon", 3937594, new DateTime(2018, 03, 15), "Cajero", 10000, new int[10] { 4, 5, 6, 0, 0, 0, 0, 0, 0, 0 }));
+
             return empleadosHardcodeados;
 
         }
 
-        public static Dictionary<string,string> HardcodearUsuariosYPass()
+        public static Dictionary<string, string> HardcodearUsuariosYPass()
         {
             Dictionary<string, string> miDiccionario = new Dictionary<string, string>();
             miDiccionario.Add("Apu Nahasamepapetilon", "Pass1");
@@ -82,7 +82,7 @@ namespace Entidades
 
 
 
-        
+
 
     }
 }

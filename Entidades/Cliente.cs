@@ -11,13 +11,6 @@ namespace Entidades
     public class Cliente : Persona
     {
       
-
-        public Cliente()
-        {
-  
-         
-        }
-
         public Cliente(string nombreCliente,string apellidoCliente,int dniCliente)
         {
             this.nombrePersona = nombreCliente;
@@ -26,25 +19,6 @@ namespace Entidades
            
         }
 
-        public string NombreCliente
-        {
-            get { return this.nombrePersona; }
-            set { this.nombrePersona = value; }
-        }
-
-        public string ApellidoCliente
-        {
-            get { return this.apellidoPersona; }
-            set { this.apellidoPersona = value; }
-        }
-
-        public int DniCliente
-        {
-            get { return this.dniPersona; }
-            set { this.dniPersona = value; }
-        }
-
-       
         
         public static List<Cliente> HardcodearClientes()
         {
@@ -64,12 +38,6 @@ namespace Entidades
            
         }
 
- 
-     
-
-      
-        
-    
 
     }
 }

@@ -28,7 +28,7 @@ namespace IngresoSistema
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@" C:\Users\maguirre\source\repos\Parcial_1_Laboratorio_2\AperturaPuerta.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".\data\AperturaPuerta.wav");
             player.Play();
             CargarMenuCompras(false);
             CargarListaCliente();
@@ -38,7 +38,7 @@ namespace IngresoSistema
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@" C:\Users\maguirre\source\repos\Parcial_1_Laboratorio_2\AperturaPuerta.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".\data\AperturaPuerta.wav");
             player.Play();
         }
 
@@ -367,7 +367,7 @@ namespace IngresoSistema
                 CargarListaProducto();
 
                 MessageBox.Show("GRACIAS VUELVA PRONTOS!!!");
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@" C:\Users\maguirre\source\repos\Parcial_1_Laboratorio_2\GraciasVuelvaPronto.wav");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".\data\GraciasVuelvaPronto.wav");
                 player.Play();
 
             }
@@ -380,7 +380,7 @@ namespace IngresoSistema
         private void GenerarTicket(List<Producto> carritoDeCompras,int nroTicket)
         {
             string nombreTicket = nroTicket.ToString();
-            Stream fs = new FileStream("C:/Users/maguirre/source/repos/Parcial_1_Laboratorio_2/TicketsDeCompra/Ticket " + nroTicket+".txt", FileMode.Create, FileAccess.Write);
+            Stream fs = new FileStream(".\\data\\Ticket " + nroTicket+".txt", FileMode.Create, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
          
 
@@ -400,19 +400,23 @@ namespace IngresoSistema
             sw.WriteLine("");
             sw.WriteLine("");
             sw.WriteLine("Lista de productos: ");
-            sw.WriteLine("------------------------------");
+            sw.WriteLine("-----------------------------------");
 
             foreach (Producto item in carritoDeCompras)
             {
-                sw.WriteLine(item.NombreProducto+"           " +"$"+ item.PrecioProducto);
+                sw.WriteLine("{0,-28}   ${1,-20}", item.NombreProducto, item.PrecioProducto);        
             }
-            sw.WriteLine("------------------------------");
-
-            sw.WriteLine("Total: " + this.lblTotalCompra.Text);
-            sw.WriteLine("");
-            sw.WriteLine("Descuento: " + this.lblTotalDescuento.Text);
-            sw.WriteLine("");
-            sw.WriteLine("Nro de ticket: " + nroTicket);
+            sw.WriteLine("-----------------------------------");
+            sw.WriteLine("Total:         {0,20} ", this.lblTotalCompra.Text);
+            sw.WriteLine("-----------------------------------");
+          //  sw.WriteLine("");
+            sw.WriteLine("-----------------------------------");
+            sw.WriteLine("Descuento:     {0,20}" , this.lblTotalDescuento.Text);
+            sw.WriteLine("-----------------------------------");
+          //  sw.WriteLine("");
+            sw.WriteLine("-----------------------------------");
+            sw.WriteLine("Nro de ticket: {0,20}", nroTicket);
+            sw.WriteLine("-----------------------------------");
 
             sw.Close();
 

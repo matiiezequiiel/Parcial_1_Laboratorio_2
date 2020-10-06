@@ -8,11 +8,11 @@ namespace Entidades
 {
     public class Producto
     {
-            string nombreProducto;
-            string categoriaProducto;
-            double precioProducto;
-            int stockProducto;
-            int codigoProducto;
+        string nombreProducto;
+        string categoriaProducto;
+        double precioProducto;
+        int stockProducto;
+        int codigoProducto;
 
         public Producto()
         {
@@ -23,7 +23,7 @@ namespace Entidades
             this.codigoProducto = 0;
         }
 
-        public Producto(string nombreProducto,string categoriaProducto,double precioProducto,int stockProducto,int codigoProducto)
+        public Producto(string nombreProducto, string categoriaProducto, double precioProducto, int stockProducto, int codigoProducto)
         {
             this.nombreProducto = nombreProducto;
             this.categoriaProducto = categoriaProducto;
@@ -71,10 +71,10 @@ namespace Entidades
         {
             List<Producto> productosHardcodeados = new List<Producto>();
 
-            productosHardcodeados.Add(new Producto("Harina","Secos",100,20,1));
-            productosHardcodeados.Add(new Producto("Galletitas", "Secos", 111, 15,2));
+            productosHardcodeados.Add(new Producto("Harina", "Secos", 100, 20, 1));
+            productosHardcodeados.Add(new Producto("Galletitas", "Secos", 111, 15, 2));
             productosHardcodeados.Add(new Producto("Banana", "Frutos", 120, 10, 3));
-            productosHardcodeados.Add(new Producto("Nuggets", "Congelados", 150, 10,4));
+            productosHardcodeados.Add(new Producto("Nuggets", "Congelados", 150, 10, 4));
             productosHardcodeados.Add(new Producto("Jamon", "Refrigerados", 180, 10, 5));
 
             return productosHardcodeados;

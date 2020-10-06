@@ -12,7 +12,7 @@ namespace Entidades
         int nroTicket;
         List<Producto> listaCompra = new List<Producto>();
 
-       
+
         public Venta()
         {
             this.nroTicket = 0;
@@ -20,7 +20,7 @@ namespace Entidades
 
         public Venta(int nroTicket, List<Producto> listaCompra)
         {
-            
+
             this.nroTicket = nroTicket;
             this.listaCompra = listaCompra;
         }
@@ -48,10 +48,10 @@ namespace Entidades
         public static List<Venta> HardcodearVenta()
         {
             List<Producto> listaProductos = Producto.HardcodearProductos();
-      
+
 
             List<Venta> listaVentas = new List<Venta>();
-   
+
 
             listaVentas.Add(new Venta(1, listaProductos));
             listaVentas.Add(new Venta(2, listaProductos));
@@ -59,12 +59,12 @@ namespace Entidades
             listaVentas.Add(new Venta(4, listaProductos));
             listaVentas.Add(new Venta(5, listaProductos));
             listaVentas.Add(new Venta(6, listaProductos));
-           
+
 
             return listaVentas;
-         
-            
+
+
         }
-      
+
     }
 }
