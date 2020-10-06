@@ -1,19 +1,19 @@
 Usted fue atendido por: Apu Nahasamepapetilon
-Fecha: 6/10/2020 09:42:01
+Fecha: 6/10/2020 09:42:46
 Cliente: Marcos Gonzalez
 
 
 Lista de productos: 
 -----------------------------------
-Banana                         $120                 
-Galletitas                     $111                 
-Harina                         $100                 
+Sandia                         $43                  
+Sandia                         $43                  
+Jamon                          $180                 
 -----------------------------------
-Total:                         $331 
+Total:                         $266 
 -----------------------------------
 -----------------------------------
 Descuento:                         
 -----------------------------------
 -----------------------------------
-Nro de ticket:                    7
+Nro de ticket:                    8
 -----------------------------------

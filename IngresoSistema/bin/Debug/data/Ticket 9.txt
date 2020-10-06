@@ -1,0 +1,25 @@
+Usted fue atendido por: Apu Nahasamepapetilon
+Fecha: 6/10/2020 09:44:57
+Cliente: Bart Simpson
+
+
+Lista de productos: 
+-----------------------------------
+Banana                         $120                 
+Banana                         $120                 
+Banana                         $120                 
+Banana                         $120                 
+Banana                         $120                 
+Banana                         $120                 
+Banana                         $120                 
+Banana                         $120                 
+Banana                         $120                 
+-----------------------------------
+Total:                        $1080 
+-----------------------------------
+-----------------------------------
+Descuento:                     $162
+-----------------------------------
+-----------------------------------
+Nro de ticket:                    9
+-----------------------------------
