@@ -6,35 +6,41 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Persona
+    public abstract class Persona
     {
         protected string nombrePersona;
         protected string apellidoPersona;
         protected int dniPersona;
 
-        public Persona()
+        protected Persona()
         {
             this.nombrePersona = "Sin nombre.";
             this.apellidoPersona = "Sin apellido.";
             this.dniPersona = 0;
+        } 
+        protected Persona(string nombrePersona, string apellidoPersona,int dniPersona)
+        {
+            this.nombrePersona = nombrePersona;
+            this.apellidoPersona = apellidoPersona;
+            this.dniPersona = dniPersona;
         }
 
         public string NombrePersona
         {
             get { return this.nombrePersona; }
-            set { this.nombrePersona = value; }
+         //   set { this.nombrePersona = value; }
         }
 
         public string ApellidoPersona
         {
             get { return this.apellidoPersona; }
-            set { this.apellidoPersona = value; }
+           // set { this.apellidoPersona = value; }
         }
 
         public int DniPersona
         {
             get { return this.dniPersona; }
-            set { this.dniPersona = value; }
+          //  set { this.dniPersona = value; }
         }
 
     }

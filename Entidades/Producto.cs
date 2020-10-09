@@ -10,6 +10,7 @@ namespace Entidades
     {
         string nombreProducto;
         string categoriaProducto;
+      
         double precioProducto;
         int stockProducto;
         int codigoProducto;
@@ -32,10 +33,10 @@ namespace Entidades
             this.codigoProducto = codigoProducto;
 
         }
-        public Producto(string nombreProducto)
-        {
-            this.nombreProducto = nombreProducto;
-        }
+        //public Producto(string nombreProducto)
+        //{
+        //    this.nombreProducto = nombreProducto;
+        //}
 
         public string NombreProducto
         {

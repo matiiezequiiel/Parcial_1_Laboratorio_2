@@ -10,13 +10,10 @@ namespace Entidades
 {
     public class Cliente : Persona
     {
-      
-        public Cliente(string nombreCliente,string apellidoCliente,int dniCliente)
+
+        public Cliente(string nombreCliente, string apellidoCliente, int dniCliente) : base(nombreCliente, apellidoCliente, dniCliente)
         {
-            this.nombrePersona = nombreCliente;
-            this.apellidoPersona = apellidoCliente;
-            this.dniPersona = dniCliente;
-           
+                    
         }
 
         

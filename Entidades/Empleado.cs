@@ -13,19 +13,21 @@ namespace Entidades
         float sueldoEmpleado;
         int[] ticketsVendidos;
 
-        public Empleado()
+        private Empleado()
         {
             fechaDeIngreso = new DateTime(1900, 01, 01);
             ticketsVendidos = new int[10];
             this.puestoEmpleado = "Sin puesto";
             this.sueldoEmpleado = 0;
         }
-        public Empleado(string nombre, string apellido, int dni, DateTime fechaDeIngreso, string puesto, float sueldo, int[] ticketsVendidos)
+        private Empleado(string nombre, string apellido, int dni, DateTime fechaDeIngreso, 
+                        string puesto, float sueldo, int[] ticketsVendidos):base(nombre,apellido, dni)
+
         {
 
-            this.nombrePersona = nombre;
-            this.apellidoPersona = apellido;
-            this.dniPersona = dni;
+         //   this.nombrePersona = nombre;
+         //   this.apellidoPersona = apellido;
+          //  this.dniPersona = dni;
             this.fechaDeIngreso = fechaDeIngreso;
             this.puestoEmpleado = puesto;
             this.sueldoEmpleado = sueldo;
@@ -33,18 +35,18 @@ namespace Entidades
         }
 
 
-        public DateTime FechaIngreso
-        {
-            get { return this.fechaDeIngreso; }
-            set { this.fechaDeIngreso = value; }
-        }
+        //private DateTime FechaIngreso
+        //{
+        //    get { return this.fechaDeIngreso; }
+        //    set { this.fechaDeIngreso = value; }
+        //}
 
 
-        public string PuestoEmpleado
-        {
-            get { return this.puestoEmpleado; }
-            set { this.puestoEmpleado = value; }
-        }
+        //private string PuestoEmpleado
+        //{
+        //    get { return this.puestoEmpleado; }
+        // //   set { this.puestoEmpleado = value; }
+        //}
 
         public int[] TicketsEmpleado
         {
@@ -55,8 +57,6 @@ namespace Entidades
         public static List<Empleado> HardcodearEmpleados()
         {
             List<Empleado> empleadosHardcodeados = new List<Empleado>();
-
-
 
             empleadosHardcodeados.Add(new Empleado("Apu", "Nahasamepapetilon", 3937594, new DateTime(2018, 03, 15), "Administrador", 10000, new int[10] { 1, 2, 3, 0, 0, 0, 0, 0, 0, 0 }));
             empleadosHardcodeados.Add(new Empleado("Manjula", "Nahasamepapetilon", 3934322, new DateTime(2016, 01, 10), "Administrador", 10000, new int[10] { 4, 5, 6, 0, 0, 0, 0, 0, 0, 0 }));
@@ -79,9 +79,6 @@ namespace Entidades
 
             return miDiccionario;
         }
-
-
-
 
 
     }

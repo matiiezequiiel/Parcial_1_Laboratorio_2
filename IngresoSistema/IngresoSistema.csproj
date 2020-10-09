@@ -57,11 +57,11 @@
     <Compile Include="ComprasPorEmpleado.Designer.cs">
       <DependentUpon>ComprasPorEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="InicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="InicioSesion.Designer.cs">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="ListaStock.cs">
       <SubType>Form</SubType>
@@ -101,8 +101,8 @@
     <EmbeddedResource Include="ComprasPorEmpleado.resx">
       <DependentUpon>ComprasPorEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="InicioSesion.resx">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaStock.resx">
       <DependentUpon>ListaStock.cs</DependentUpon>
