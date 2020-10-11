@@ -42,11 +42,11 @@ namespace Entidades
         //}
 
 
-        //private string PuestoEmpleado
-        //{
-        //    get { return this.puestoEmpleado; }
-        // //   set { this.puestoEmpleado = value; }
-        //}
+        public string PuestoEmpleado
+        {
+            get { return this.puestoEmpleado; }
+         //   set { this.puestoEmpleado = value; }
+        }
 
         public int[] TicketsEmpleado
         {

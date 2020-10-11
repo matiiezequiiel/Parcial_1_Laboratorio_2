@@ -115,21 +115,21 @@ namespace IngresoSistema
 
             foreach (Producto item in listaAuxProd)
             {
-                string nombre = item.NombreProducto;
-                int stock = item.StockProducto;
-                string categoria = item.CategoriaProducto;
-                int codigo = item.CodigoProducto;
-                double precio = item.PrecioProducto;
+                string nombre = item.nombreProducto;
+                int stock = item.stockProducto;
+            //    string categoria = item.CategoriaProducto;
+                int codigo = item.codigoProducto;
+                double precio = item.precioProducto;
 
-                listaAuxProdEnCompra.Add(new Producto(nombre, categoria, precio, stock, codigo));
+                listaAuxProdEnCompra.Add(new Producto(nombre, item.tipoProducto, precio, stock, codigo));
             }
 
 
             foreach (Producto item in listaAuxProd)
             {
-                ListViewItem aux = new ListViewItem(item.NombreProducto);
-                aux.SubItems.Add(item.StockProducto.ToString());
-                aux.SubItems.Add(item.PrecioProducto.ToString());
+                ListViewItem aux = new ListViewItem(item.nombreProducto);
+                aux.SubItems.Add(item.stockProducto.ToString());
+                aux.SubItems.Add(item.precioProducto.ToString());
                 lsvProductos.Items.Add(aux);
 
             }
@@ -143,9 +143,9 @@ namespace IngresoSistema
            
             foreach (Producto item in listaAuxProdEnCompra)
             {
-                ListViewItem aux = new ListViewItem(item.NombreProducto);
-                aux.SubItems.Add(item.StockProducto.ToString());
-                aux.SubItems.Add(item.PrecioProducto.ToString());
+                ListViewItem aux = new ListViewItem(item.nombreProducto);
+                aux.SubItems.Add(item.stockProducto.ToString());
+                aux.SubItems.Add(item.precioProducto.ToString());
                 lsvProductos.Items.Add(aux);
 
             }
@@ -158,9 +158,9 @@ namespace IngresoSistema
          
             foreach (Producto item in listaAuxProd)
             {
-                ListViewItem aux = new ListViewItem(item.NombreProducto);
-                aux.SubItems.Add(item.StockProducto.ToString());
-                aux.SubItems.Add(item.PrecioProducto.ToString());
+                ListViewItem aux = new ListViewItem(item.nombreProducto);
+                aux.SubItems.Add(item.stockProducto.ToString());
+                aux.SubItems.Add(item.precioProducto.ToString());
                 lsvProductos.Items.Add(aux);
 
             }
@@ -169,13 +169,13 @@ namespace IngresoSistema
 
             foreach (Producto item in listaAuxProd)
             {
-                string nombre = item.NombreProducto;
-                int stock = item.StockProducto;
-                string categoria = item.CategoriaProducto;
-                int codigo = item.CodigoProducto;
-                double precio = item.PrecioProducto;
+                string nombre = item.nombreProducto;
+                int stock = item.stockProducto;
+             //   string categoria = item.CategoriaProducto;
+                int codigo = item.codigoProducto;
+                double precio = item.precioProducto;
 
-                listaAuxProdEnCompra.Add(new Producto(nombre, categoria, precio, stock, codigo));
+                listaAuxProdEnCompra.Add(new Producto(nombre, item.tipoProducto, precio, stock, codigo));
             }
            
         }
@@ -271,9 +271,9 @@ namespace IngresoSistema
 
             foreach (Producto item in listaAuxProdEnCompra)
             {
-                if(item.NombreProducto==productoActualizar)
+                if(item.nombreProducto==productoActualizar)
                 {
-                    item.StockProducto = item.StockProducto - 1;
+                    item.stockProducto = item.stockProducto - 1;
                     carroDeCompras.Add(item);
                     SacarTotales();
                     RefrescarListaProducto();
@@ -322,8 +322,8 @@ namespace IngresoSistema
                     {
                         foreach (Producto prod in carroDeCompras)
                         {
-                            total = total + prod.PrecioProducto;
-                            descuentoProducto = prod.PrecioProducto * 15 / 100;
+                            total = total + prod.precioProducto;
+                            descuentoProducto = prod.precioProducto * 15 / 100;
                             totalDesc = totalDesc + descuentoProducto;
 
                         }
@@ -334,7 +334,7 @@ namespace IngresoSistema
                     {
                         foreach (Producto prod in carroDeCompras)
                         {
-                            total = total + prod.PrecioProducto;
+                            total = total + prod.precioProducto;
 
                         }
                         this.lblTotalCompra.Text = "$" + total.ToString();
@@ -404,7 +404,7 @@ namespace IngresoSistema
 
             foreach (Producto item in carritoDeCompras)
             {
-                sw.WriteLine("{0,-28}   ${1,-20}", item.NombreProducto, item.PrecioProducto);        
+                sw.WriteLine("{0,-28}   ${1,-20}", item.nombreProducto, item.precioProducto);        
             }
             sw.WriteLine("-----------------------------------");
             sw.WriteLine("Total:         {0,20} ", this.lblTotalCompra.Text);

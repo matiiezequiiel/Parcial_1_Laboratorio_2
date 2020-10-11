@@ -1,15 +1,16 @@
 Usted fue atendido por: Apu Nahasamepapetilon
-Fecha: 6/10/2020 09:42:01
-Cliente: Marcos Gonzalez
+Fecha: 11/10/2020 18:45:37
+Cliente: Carl Carlson
 
 
 Lista de productos: 
 -----------------------------------
-Banana                         $120                 
-Galletitas                     $111                 
 Harina                         $100                 
+Galletitas                     $111                 
+Banana                         $120                 
+Nuggets                        $150                 
 -----------------------------------
-Total:                         $331 
+Total:                         $481 
 -----------------------------------
 -----------------------------------
 Descuento:                         

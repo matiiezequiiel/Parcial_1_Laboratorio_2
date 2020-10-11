@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace IngresoSistema
 {
     
@@ -39,11 +40,11 @@ namespace IngresoSistema
             if (double.TryParse(txtPrecio.Text, out aux) && int.TryParse(txtStockInicial.Text, out aux2) &&
             this.cmbCategoria.SelectedIndex != 0 )
             {
-                nuevoProd.NombreProducto = txtNombre.Text;
-                nuevoProd.PrecioProducto = aux;
-                nuevoProd.StockProducto = aux2;
-                nuevoProd.CategoriaProducto = this.cmbCategoria.Text;
-                nuevoProd.CodigoProducto = listaProductos.Count + 1;
+                nuevoProd.nombreProducto = txtNombre.Text;
+                nuevoProd.precioProducto = aux;
+                nuevoProd.stockProducto = aux2;
+                nuevoProd.tipoProducto =(Producto.ECategoriaProducto) this.cmbCategoria.SelectedItem;
+                nuevoProd.codigoProducto = listaProductos.Count + 1;
 
                 Comercio.AgregarProducto(nuevoProd);
                 auxMenu.CargarListaProducto();
@@ -79,6 +80,7 @@ namespace IngresoSistema
 
         private void AgregarProducto_Load(object sender, EventArgs e)
         {
+            cmbCategoria.DataSource = Enum.GetValues(typeof(Producto.ECategoriaProducto));
             cmbCategoria.SelectedIndex = 0;
         }
 

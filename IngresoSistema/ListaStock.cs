@@ -33,10 +33,10 @@ namespace IngresoSistema
 
             foreach (Producto item in listaProductos)
             {
-                ListViewItem aux = new ListViewItem(item.NombreProducto);
-                aux.SubItems.Add(item.StockProducto.ToString());
-                aux.SubItems.Add(item.CategoriaProducto);
-                aux.SubItems.Add("$"+item.PrecioProducto.ToString());
+                ListViewItem aux = new ListViewItem(item.nombreProducto);
+                aux.SubItems.Add(item.stockProducto.ToString());
+                aux.SubItems.Add(item.tipoProducto.ToString());
+                aux.SubItems.Add("$"+item.precioProducto.ToString());
                 
 
                 lsvListaStock.Items.Add(aux);

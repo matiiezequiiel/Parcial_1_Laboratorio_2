@@ -86,13 +86,13 @@ namespace Entidades
 
             foreach (Producto item in listaProductos)
             {
-                string nombre = item.NombreProducto;
-                int stock = item.StockProducto;
-                string categoria = item.CategoriaProducto;
-                int codigo = item.CodigoProducto;
-                double precio = item.PrecioProducto;
+                string nombre = item.nombreProducto;
+                int stock = item.stockProducto;
+             //   string categoria = item.CategoriaProducto.ToString();
+                int codigo = item.codigoProducto;
+                double precio = item.precioProducto;
 
-                aux.Add(new Producto(nombre, categoria, precio, stock, codigo));
+                aux.Add(new Producto(nombre, item.tipoProducto, precio, stock, codigo));
             }
  
             return aux;  
@@ -128,13 +128,13 @@ namespace Entidades
 
             foreach (Producto item in productosVendidos)
             {
-                string nombre = item.NombreProducto;
-                int stock = item.StockProducto;
-                string categoria = item.CategoriaProducto;
-                int codigo = item.CodigoProducto;
-                double precio = item.PrecioProducto;
+                string nombre = item.nombreProducto;
+                int stock = item.stockProducto;
+            //    string categoria = item.CategoriaProducto.ToString();
+                int codigo = item.codigoProducto;
+                double precio = item.precioProducto;
 
-                listaNuevaVenta.Add(new Producto(nombre, categoria, precio, stock, codigo));
+                listaNuevaVenta.Add(new Producto(nombre, item.tipoProducto, precio, stock, codigo));
             }
            
             Venta miVenta = new Venta(nroTicket, listaNuevaVenta);
@@ -172,13 +172,13 @@ namespace Entidades
             
             foreach (Producto item in nuevaListaAct)
             {
-                string nombre = item.NombreProducto;
-                int stock = item.StockProducto;
-                string categoria = item.CategoriaProducto;
-                int codigo = item.CodigoProducto;
-                double precio = item.PrecioProducto;
+                string nombre = item.nombreProducto;
+                int stock = item.stockProducto;
+             //   string categoria = item.CategoriaProducto.ToString();
+                int codigo = item.codigoProducto;
+                double precio = item.precioProducto;
 
-                listaProductos.Add(new Producto(nombre, categoria, precio, stock, codigo));
+                listaProductos.Add(new Producto(nombre, item.tipoProducto, precio, stock, codigo));
             }
 
         }

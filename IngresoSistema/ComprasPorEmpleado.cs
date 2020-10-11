@@ -113,7 +113,7 @@ namespace IngresoSistema
 
             foreach (Producto item in auxProducto.ListaCompra)
             {
-                ListViewItem aux = new ListViewItem(item.NombreProducto);
+                ListViewItem aux = new ListViewItem(item.nombreProducto);
                 lsvListaCompra.Items.Add(aux);
             }
             
