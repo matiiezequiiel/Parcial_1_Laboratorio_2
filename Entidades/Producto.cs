@@ -18,9 +18,9 @@ namespace Entidades
         //double precioProducto;
         //int stockProducto;
         //int codigoProducto; 
-        
-        public string nombreProducto;
         // string categoriaProducto;
+
+        public string nombreProducto;
         public enum ECategoriaProducto
         {
             Secos, Lacteos, Frutas, Verduras, Refrigerados, Congelados, Panificados, Ninguna
@@ -30,6 +30,7 @@ namespace Entidades
         public int stockProducto;
         public int codigoProducto;
 
+        #region constructores
         public Producto()
         {
             this.nombreProducto = "Sin nombre";
@@ -48,6 +49,7 @@ namespace Entidades
             this.codigoProducto = codigoProducto;
 
         }
+        #endregion
         //public Producto(string nombreProducto)
         //{
         //    this.nombreProducto = nombreProducto;

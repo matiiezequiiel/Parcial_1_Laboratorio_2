@@ -1,6 +1,6 @@
 Usted fue atendido por: Apu Nahasamepapetilon
-Fecha: 11/10/2020 18:45:37
-Cliente: Carl Carlson
+Fecha: 12/10/2020 11:06:37
+Cliente: Marge Simpson
 
 
 Lista de productos: 
@@ -8,12 +8,12 @@ Lista de productos:
 Harina                         $100                 
 Galletitas                     $111                 
 Banana                         $120                 
-Nuggets                        $150                 
+Banana                         $120                 
 -----------------------------------
-Total:                         $481 
+Total:                         $451 
 -----------------------------------
 -----------------------------------
-Descuento:                         
+Descuento:                   $67,65
 -----------------------------------
 -----------------------------------
 Nro de ticket:                    7

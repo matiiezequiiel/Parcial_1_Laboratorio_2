@@ -13,6 +13,7 @@ namespace Entidades
         float sueldoEmpleado;
         int[] ticketsVendidos;
 
+        #region constructores
         private Empleado()
         {
             fechaDeIngreso = new DateTime(1900, 01, 01);
@@ -33,7 +34,7 @@ namespace Entidades
             this.sueldoEmpleado = sueldo;
             this.ticketsVendidos = ticketsVendidos;
         }
-
+        #endregion
 
         //private DateTime FechaIngreso
         //{
@@ -41,7 +42,7 @@ namespace Entidades
         //    set { this.fechaDeIngreso = value; }
         //}
 
-
+        #region propiedades
         public string PuestoEmpleado
         {
             get { return this.puestoEmpleado; }
@@ -51,8 +52,10 @@ namespace Entidades
         public int[] TicketsEmpleado
         {
             get { return this.ticketsVendidos; }
-            set { this.ticketsVendidos = value; }
+         //   set {this.ticketsVendidos = value; }
         }
+
+        #endregion
 
         public static List<Empleado> HardcodearEmpleados()
         {

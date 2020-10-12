@@ -28,23 +28,32 @@ namespace Entidades
 
         }
 
-        public static Empleado AgregarEmpleado(Empleado auxEmpleado)
-        {
-            listaEmpleados.Add(auxEmpleado);
-            return auxEmpleado;
-        }
+        /// <summary>
+        /// Agrega un obj del tipo Cliente a la lista de clientes.
+        /// </summary>
+        /// <param name="auxCliente">Cliente a agregar.</param>
+        /// <returns>Cliente agregado.</returns>
         public static Cliente AgregarCliente(Cliente auxCliente)
         {
             listaClientes.Add(auxCliente);
             return auxCliente;
         }
 
+        /// <summary>
+        /// Agrega un obj del tipo Producto a la lista de productos.
+        /// </summary>
+        /// <param name="auxProducto">Producto a agregar.</param>
+        /// <returns>Producto agregado.</returns>
         public static Producto AgregarProducto (Producto auxProducto)
         { 
             listaProductos.Add(auxProducto);
             return auxProducto;
         }
         
+        /// <summary>
+        /// Carga clientes,empleados,user/pass,productos y ventas para pruebas.
+        /// </summary>
+        /// <returns></returns>
         public static bool CargarHardcodeo()
         {
             listaClientes = Cliente.HardcodearClientes();
@@ -64,21 +73,38 @@ namespace Entidades
             
         }
 
+        /// <summary>
+        /// Retora la lista de empleados cargados.
+        /// </summary>
+        /// <returns>Lista de empleados cargados.</returns>
         public static List<Empleado> RetornarListaEmpleados()
         {
 
             return listaEmpleados;
-        } 
-        
+        }
+
+        /// <summary>
+        /// Retora la lista de clientes cargados.
+        /// </summary>
+        /// <returns>Lista de clientes cargados.</returns>
         public static List<Cliente> RetornarListaClientes()
         {
             return listaClientes;
         }
+
+        /// <summary>
+        /// Retora la lista de ventas cargadas.
+        /// </summary>
+        /// <returns>Lista de ventas cargadas.</returns>
         public static List<Venta> RetornarListaVentas()
         {
             return listaVentas;
-        } 
-        
+        }
+
+        /// <summary>
+        /// Retora la lista de productos cargados.
+        /// </summary>
+        /// <returns>Lista de productos cargados.</returns>
         public static List<Producto> RetornarListaProductos()
         {
             List<Producto> aux = new List<Producto>();
@@ -98,6 +124,13 @@ namespace Entidades
             return aux;  
         }
 
+
+        /// <summary>
+        /// Valida si el usuario y contraseña ingresada es correcta.
+        /// </summary>
+        /// <param name="usuario">Usuario a validar.</param>
+        /// <param name="contraseña">Contraseña a validar.</param>
+        /// <returns>True si es correcta, false si es incorrecta.</returns>
         public static bool validarUsuario (string usuario, string contraseña)
         {
             bool retorno = false;
@@ -121,6 +154,12 @@ namespace Entidades
             
         }
 
+        /// <summary>
+        /// Carga venta en la lista y genera nro de ticket de la compra realizada.
+        /// </summary>
+        /// <param name="productosVendidos">Lista de productos vendidos.</param>
+        /// <param name="empleadoVenta">Empleado que realizo la compra.</param>
+        /// <returns>Nro de ticket de la venta.</returns>
         public static int CargarVenta(List<Producto> productosVendidos, string empleadoVenta)
         {
             int nroTicket = listaVentas.Count + 1;
@@ -145,6 +184,11 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Carga el ticket generado en una compra al empleado que la realizo.
+        /// </summary>
+        /// <param name="empleado">Nombre del empleado que realizo la compra.</param>
+        /// <param name="nroTicketNuevo">Nro de ticket de la compra.</param>
         public static void CargarTicketAEmpleado(string empleado,int nroTicketNuevo)
         {
             string[] valores;
@@ -166,6 +210,11 @@ namespace Entidades
                 }
             }
         }
+        /// <summary>
+        /// Limpia la lista de productos y agrega la nueva lista actualizada.
+        /// </summary>
+        /// <param name="nuevaListaAct">Nueva lista.
+        /// </param>
         public static void ActualizarListaStock(List<Producto> nuevaListaAct)
         {
             listaProductos.Clear();

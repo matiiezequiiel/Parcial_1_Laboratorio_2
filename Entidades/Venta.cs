@@ -9,10 +9,10 @@ namespace Entidades
 {
     public class Venta
     {
-        int nroTicket;
+        public int nroTicket;
         List<Producto> listaCompra = new List<Producto>();
 
-
+        #region constructores
         public Venta()
         {
             this.nroTicket = 0;
@@ -24,23 +24,14 @@ namespace Entidades
             this.nroTicket = nroTicket;
             this.listaCompra = listaCompra;
         }
-
-        public Venta(List<Producto> listaCompra)
-        {
-            this.listaCompra = listaCompra;
-        }
+        #endregion
 
 
-        public int NumeroTicket
-        {
-            get { return this.nroTicket; }
-            set { this.nroTicket = value; }
-        }
 
         public List<Producto> ListaCompra
         {
             get { return this.listaCompra; }
-            set { this.listaCompra = value; }
+         //   set { this.listaCompra = value; }
         }
 
 

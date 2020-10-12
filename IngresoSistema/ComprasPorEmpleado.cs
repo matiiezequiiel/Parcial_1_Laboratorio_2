@@ -172,7 +172,7 @@ namespace IngresoSistema
 
             foreach (Venta item in listaVentas)
             {
-                if (nroTicket == item.NumeroTicket)
+                if (nroTicket == item.nroTicket)
                 {
                     CargarProductosDeTicket(item);
                     break;

@@ -12,6 +12,7 @@ namespace Entidades
         protected string apellidoPersona;
         protected int dniPersona;
 
+        #region constructores
         protected Persona()
         {
             this.nombrePersona = "Sin nombre.";
@@ -24,7 +25,9 @@ namespace Entidades
             this.apellidoPersona = apellidoPersona;
             this.dniPersona = dniPersona;
         }
+        #endregion
 
+        #region propiedades
         public string NombrePersona
         {
             get { return this.nombrePersona; }
@@ -42,6 +45,7 @@ namespace Entidades
             get { return this.dniPersona; }
           //  set { this.dniPersona = value; }
         }
+        #endregion
 
     }
 }

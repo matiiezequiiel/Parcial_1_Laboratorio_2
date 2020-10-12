@@ -10,13 +10,12 @@ namespace Entidades
 {
     public class Cliente : Persona
     {
-
+        #region constructores
         public Cliente(string nombreCliente, string apellidoCliente, int dniCliente) : base(nombreCliente, apellidoCliente, dniCliente)
         {
                     
         }
-
-        
+        #endregion
         public static List<Cliente> HardcodearClientes()
         {
             List<Cliente> clientesHardcodeados = new List<Cliente>();
