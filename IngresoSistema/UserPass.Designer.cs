@@ -36,7 +36,7 @@
             this.btnInicio = new System.Windows.Forms.Button();
             this.lblPuesto = new System.Windows.Forms.Label();
             this.txtPuesto = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +47,7 @@
             this.lblUsuario.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.Location = new System.Drawing.Point(19, 89);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(47, 15);
+            this.lblUsuario.Size = new System.Drawing.Size(71, 24);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario";
             // 
@@ -57,7 +57,7 @@
             this.lblPass.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPass.Location = new System.Drawing.Point(15, 140);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(64, 15);
+            this.lblPass.Size = new System.Drawing.Size(100, 24);
             this.lblPass.TabIndex = 1;
             this.lblPass.Text = "Contraseña";
             // 
@@ -65,7 +65,7 @@
             // 
             this.txtUsuario.Location = new System.Drawing.Point(93, 85);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(173, 23);
+            this.txtUsuario.Size = new System.Drawing.Size(173, 30);
             this.txtUsuario.TabIndex = 2;
             // 
             // txtPass
@@ -73,7 +73,7 @@
             this.txtPass.Location = new System.Drawing.Point(93, 136);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(173, 23);
+            this.txtPass.Size = new System.Drawing.Size(173, 30);
             this.txtPass.TabIndex = 3;
             // 
             // btnInicio
@@ -93,7 +93,7 @@
             this.lblPuesto.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuesto.Location = new System.Drawing.Point(22, 182);
             this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(40, 15);
+            this.lblPuesto.Size = new System.Drawing.Size(64, 24);
             this.lblPuesto.TabIndex = 5;
             this.lblPuesto.Text = "Puesto";
             // 
@@ -102,19 +102,19 @@
             this.txtPuesto.Location = new System.Drawing.Point(94, 179);
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.ReadOnly = true;
-            this.txtPuesto.Size = new System.Drawing.Size(173, 23);
+            this.txtPuesto.Size = new System.Drawing.Size(173, 30);
             this.txtPuesto.TabIndex = 6;
             // 
-            // button1
+            // btnAtras
             // 
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(75, 223);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 36);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAtras.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(75, 223);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(99, 36);
+            this.btnAtras.TabIndex = 5;
+            this.btnAtras.Text = "Cancelar";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -128,12 +128,12 @@
             // 
             // UserPass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(338, 272);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.txtPuesto);
             this.Controls.Add(this.lblPuesto);
             this.Controls.Add(this.btnInicio);
@@ -162,7 +162,7 @@
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Label lblPuesto;
         public System.Windows.Forms.TextBox txtPuesto;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

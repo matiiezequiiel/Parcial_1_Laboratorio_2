@@ -25,9 +25,8 @@ namespace Entidades
             listaVentas = new List<Venta>();
             usuariosContraseñas = new Dictionary<string, string>();
            
-
         }
-
+    
         /// <summary>
         /// Agrega un obj del tipo Cliente a la lista de clientes.
         /// </summary>

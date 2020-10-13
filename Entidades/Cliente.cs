@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace Entidades
                     
         }
         #endregion
+
+        #region Metodos
         public static List<Cliente> HardcodearClientes()
         {
             List<Cliente> clientesHardcodeados = new List<Cliente>();
@@ -33,6 +36,18 @@ namespace Entidades
             return clientesHardcodeados;
            
         }
+
+        public override string DatosPersona()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("Nombre Cliente: {0}\n", this.nombrePersona);
+            sb.AppendFormat("Apellido del Cliente: {0}\n", this.apellidoPersona);
+            sb.AppendFormat("DNI del Cliente: {0}\n", this.DniPersona);
+
+            return sb.ToString();
+        }
+
+        #endregion
 
 
     }

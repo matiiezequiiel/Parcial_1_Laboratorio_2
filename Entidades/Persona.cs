@@ -8,17 +8,19 @@ namespace Entidades
 {
     public abstract class Persona
     {
+        #region Atributos
         protected string nombrePersona;
         protected string apellidoPersona;
         protected int dniPersona;
+        #endregion
 
         #region constructores
-        protected Persona()
-        {
-            this.nombrePersona = "Sin nombre.";
-            this.apellidoPersona = "Sin apellido.";
-            this.dniPersona = 0;
-        } 
+        //protected Persona()
+        //{
+        //    this.nombrePersona = "Sin nombre.";
+        //    this.apellidoPersona = "Sin apellido.";
+        //    this.dniPersona = 0;
+        //} 
         protected Persona(string nombrePersona, string apellidoPersona,int dniPersona)
         {
             this.nombrePersona = nombrePersona;
@@ -47,5 +49,8 @@ namespace Entidades
         }
         #endregion
 
+        #region Metodos
+        public abstract string DatosPersona();
+        #endregion
     }
 }

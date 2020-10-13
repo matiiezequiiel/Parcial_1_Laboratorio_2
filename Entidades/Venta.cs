@@ -9,8 +9,10 @@ namespace Entidades
 {
     public class Venta
     {
+        #region Atributos
         public int nroTicket;
         List<Producto> listaCompra = new List<Producto>();
+        #endregion
 
         #region constructores
         public Venta()

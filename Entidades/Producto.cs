@@ -20,6 +20,7 @@ namespace Entidades
         //int codigoProducto; 
         // string categoriaProducto;
 
+        #region Atributos
         public string nombreProducto;
         public enum ECategoriaProducto
         {
@@ -29,6 +30,7 @@ namespace Entidades
         public double precioProducto;
         public int stockProducto;
         public int codigoProducto;
+        #endregion
 
         #region constructores
         public Producto()

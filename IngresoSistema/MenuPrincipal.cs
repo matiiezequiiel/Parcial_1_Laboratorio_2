@@ -10,17 +10,22 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace IngresoSistema
 {
     public partial class MenuPrincipal : Form
     {
-        List<Producto> listaAuxProdEnCompra=new List<Producto>();
+        #region Atributos
+        List<Producto> listaAuxProdEnCompra = new List<Producto>();
         List<Producto> listaAuxProd = new List<Producto>();
         List<Cliente> listaAuxCliente = new List<Cliente>();
         List<Producto> carroDeCompras = new List<Producto>();
-   
-        
+        int lineaSeleccionada;
+        #endregion
+
+        #region Carga de datos
+
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -34,14 +39,6 @@ namespace IngresoSistema
             CargarListaCliente();
             CargarListaProducto();
         }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".\data\AperturaPuerta.wav");
-            player.Play();
-        }
-
         private void nuevaCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CargarMenuCompras(true);
@@ -63,9 +60,11 @@ namespace IngresoSistema
                 lblTotalDescuento.Visible = true;
                 btnConfirmarCompra.Visible = true;
                 btnVaciarCarrito.Visible = true;
+                btnDetalleEmpleado.Visible = true;
                 lsvCarrito.Visible = true;
                 lsvClientes.Visible = true;
                 lsvProductos.Visible = true;
+
             }
             else
             {
@@ -81,6 +80,7 @@ namespace IngresoSistema
                 lblTotalDescuento.Visible = false;
                 btnConfirmarCompra.Visible = false;
                 btnVaciarCarrito.Visible = false;
+                btnDetalleEmpleado.Visible = false;
                 lsvCarrito.Visible = false;
                 lsvClientes.Visible = false;
                 lsvProductos.Visible = false;
@@ -91,7 +91,7 @@ namespace IngresoSistema
         public void CargarListaCliente()
         {
             lsvClientes.Items.Clear();
-           
+
             listaAuxCliente = Comercio.RetornarListaClientes();
 
 
@@ -117,7 +117,7 @@ namespace IngresoSistema
             {
                 string nombre = item.nombreProducto;
                 int stock = item.stockProducto;
-            //    string categoria = item.CategoriaProducto;
+                //    string categoria = item.CategoriaProducto;
                 int codigo = item.codigoProducto;
                 double precio = item.precioProducto;
 
@@ -135,12 +135,16 @@ namespace IngresoSistema
             }
         }
 
+        #endregion
+
+        #region Refrescar listas
+
         private void RefrescarListaProducto()
         {
             lsvProductos.Items.Clear();
-         
-            
-           
+
+
+
             foreach (Producto item in listaAuxProdEnCompra)
             {
                 ListViewItem aux = new ListViewItem(item.nombreProducto);
@@ -149,13 +153,13 @@ namespace IngresoSistema
                 lsvProductos.Items.Add(aux);
 
             }
-           
-        }    
+
+        }
         private void RefrescarCarrito()
         {
             lsvProductos.Items.Clear();
-           
-         
+
+
             foreach (Producto item in listaAuxProd)
             {
                 ListViewItem aux = new ListViewItem(item.nombreProducto);
@@ -171,14 +175,76 @@ namespace IngresoSistema
             {
                 string nombre = item.nombreProducto;
                 int stock = item.stockProducto;
-             //   string categoria = item.CategoriaProducto;
+                //   string categoria = item.CategoriaProducto;
                 int codigo = item.codigoProducto;
                 double precio = item.precioProducto;
 
                 listaAuxProdEnCompra.Add(new Producto(nombre, item.tipoProducto, precio, stock, codigo));
             }
-           
+
         }
+
+        private void ActualizarStockListaAux(string productoActualizar)
+        {
+
+            foreach (Producto item in listaAuxProdEnCompra)
+            {
+                if (item.nombreProducto == productoActualizar)
+                {
+                    item.stockProducto = item.stockProducto - 1;
+                    carroDeCompras.Add(item);
+                    SacarTotales();
+                    RefrescarListaProducto();
+                    break;
+
+                }
+            }
+        }
+
+
+
+        #endregion
+
+        #region Nuevos Forms
+
+        private void lblNuevoCliente_Click(object sender, EventArgs e)
+        {
+            NuevoCliente formAgregarCliente = new NuevoCliente(this);
+            this.Hide();
+            formAgregarCliente.Show();
+        }
+
+        private void comprasPorEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ComprasPorEmpleado formCompraPorEmpleado = new ComprasPorEmpleado();
+            this.Hide();
+            formCompraPorEmpleado.Show();
+        }
+
+        private void stockDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaStock formStock = new ListaStock();
+            this.Hide();
+            formStock.Show();
+        }
+
+        private void altaProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarProducto formAgregarProducto = new AgregarProducto(this);
+            this.Hide();
+            formAgregarProducto.Show();
+        }
+
+        private void productoConMenosDe10UnidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StockMenosProductos formStock10Un = new StockMenosProductos();
+            this.Hide();
+            formStock10Un.Show();
+        }
+
+        #endregion
+
+        #region Drag and Drop
         private void lsvClientes_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             int indiceCheck;
@@ -205,21 +271,25 @@ namespace IngresoSistema
             }
             catch (Exception)
             {
-               
-                
+
+
             }
-  
+
+
+
         }
 
         private void lsvCarrito_DragOver(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Copy;
+
+
         }
 
         private void lsvCarrito_DragDrop(object sender, DragEventArgs e)
         {
             bool seleccionoCliente = false;
-            
+
             foreach (ListViewItem auxLista in lsvClientes.Items)
             {
                 if (auxLista.Checked == true)
@@ -228,10 +298,10 @@ namespace IngresoSistema
                     seleccionoCliente = true;
                     break;
                 }
-                
+
             }
 
-            if(seleccionoCliente)
+            if (seleccionoCliente)
             {
                 int lineaArrastrada = Convert.ToInt32(e.Data.GetData(Type.GetType("System.Int32")));
 
@@ -240,7 +310,7 @@ namespace IngresoSistema
                 {
                     if (lineaArrastrada == aux.Index)
                     {
-                        if(aux.SubItems[1].Text!="0")
+                        if (aux.SubItems[1].Text != "0")
                         {
                             ListViewItem nuevoProducto = new ListViewItem(aux.Text);
                             lsvCarrito.Items.Add(nuevoProducto);
@@ -251,41 +321,33 @@ namespace IngresoSistema
                         else
                         {
                             MessageBox.Show("No hay stock del producto seleccionado");
-                            if(lsvCarrito.Items.Count==0)
+                            if (lsvCarrito.Items.Count == 0)
                             {
                                 lsvClientes.CheckBoxes = true;
                             }
-                            
+
                         }
-                        
+
                     }
                 }
 
             }
-         
-           
+
+
         }
 
-        private void ActualizarStockListaAux (string productoActualizar)
-        {
 
-            foreach (Producto item in listaAuxProdEnCompra)
-            {
-                if(item.nombreProducto==productoActualizar)
-                {
-                    item.stockProducto = item.stockProducto - 1;
-                    carroDeCompras.Add(item);
-                    SacarTotales();
-                    RefrescarListaProducto();
-                    break;
-                   
-                }
-            }
-        }
+
+
+
+
+        #endregion
+
+        #region botones
 
         private void btnVaciarCarrito_Click(object sender, EventArgs e)
         {
-            if(carroDeCompras.Count>0)
+            if (carroDeCompras.Count > 0)
             {
                 lsvCarrito.Items.Clear();
                 carroDeCompras.Clear();
@@ -299,10 +361,126 @@ namespace IngresoSistema
             {
                 MessageBox.Show("El carrito esta vacio.");
             }
-            
-            
+
+
         }
-        
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".\data\AperturaPuerta.wav");
+            player.Play();
+        }
+
+        private void btnConfirmarCompra_Click(object sender, EventArgs e)
+        {
+            int nroTicket;
+
+            if (carroDeCompras.Count > 0)
+            {
+                nroTicket = Comercio.CargarVenta(carroDeCompras, this.txtEmpleadoLogeado.Text);
+                GenerarTicket(carroDeCompras, nroTicket);
+                Comercio.ActualizarListaStock(listaAuxProdEnCompra);
+                listaAuxProdEnCompra.Clear();
+                lsvCarrito.Items.Clear();
+                lblTotalCompra.Text = "";
+                lblTotalDescuento.Text = "";
+                lsvClientes.CheckBoxes = true;
+                carroDeCompras.Clear();
+                CargarListaProducto();
+
+                MessageBox.Show("GRACIAS VUELVA PRONTOS!!!");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".\data\GraciasVuelvaPronto.wav");
+                player.Play();
+
+            }
+            else
+            {
+                MessageBox.Show("El carrito esta vacio.");
+            }
+        }
+
+        private void btnDetalleEmpleado_Click(object sender, EventArgs e)
+        {
+            //List<Empleado> listaEmpleados = new List<Empleado>();
+
+            //listaEmpleados=Comercio
+            string[] valores;
+            valores = txtEmpleadoLogeado.Text.Split(' ');
+
+
+            foreach (Empleado item in Comercio.RetornarListaEmpleados())
+            {
+                if (valores[0] == item.NombrePersona && valores[1] == item.ApellidoPersona)
+                {
+                    MessageBox.Show(item.DatosPersona());
+                }
+            }
+        }
+
+        private void lsvClientes_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Right)
+            {
+                menuCliente.Show(lsvClientes, e.X, e.Y);
+                lineaSeleccionada = lsvClientes.HitTest(e.X, e.Y).Item.Index;
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string nombre = "";
+            string apellido = "";
+
+
+            foreach (ListViewItem item in lsvClientes.Items)
+            {
+                if (item.Index == lineaSeleccionada)
+                {
+                    nombre = item.SubItems[0].Text;
+                    apellido = item.SubItems[1].Text;
+                    break;
+                }
+            }
+
+            foreach (Cliente item in listaAuxCliente)
+            {
+                if (item.NombrePersona == nombre && item.ApellidoPersona == apellido)
+                {
+                    MessageBox.Show(item.DatosPersona());
+                    break;
+                }
+            }
+
+        }
+
+
+
+        #endregion
+
+        #region Total y tickets de compras
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void SacarTotales()
         {
             double total=0;
@@ -349,34 +527,7 @@ namespace IngresoSistema
             
         }
 
-        private void btnConfirmarCompra_Click(object sender, EventArgs e)
-        {
-            int nroTicket;
-
-            if(carroDeCompras.Count>0)
-            {
-                nroTicket=Comercio.CargarVenta(carroDeCompras,this.txtEmpleadoLogeado.Text);
-                GenerarTicket(carroDeCompras,nroTicket);
-                Comercio.ActualizarListaStock(listaAuxProdEnCompra);
-                listaAuxProdEnCompra.Clear();
-                lsvCarrito.Items.Clear();
-                lblTotalCompra.Text = "";
-                lblTotalDescuento.Text = ""; 
-                lsvClientes.CheckBoxes = true;
-                carroDeCompras.Clear();
-                CargarListaProducto();
-
-                MessageBox.Show("GRACIAS VUELVA PRONTOS!!!");
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".\data\GraciasVuelvaPronto.wav");
-                player.Play();
-
-            }
-            else
-            {
-                MessageBox.Show("El carrito esta vacio.");
-            }
-        }
-
+        
         private void GenerarTicket(List<Producto> carritoDeCompras,int nroTicket)
         {
             string nombreTicket = nroTicket.ToString();
@@ -423,39 +574,8 @@ namespace IngresoSistema
 
         }
 
-        private void lblNuevoCliente_Click(object sender, EventArgs e)
-        {
-            NuevoCliente formAgregarCliente = new NuevoCliente(this);
-            this.Hide();
-            formAgregarCliente.Show();
-        }
+       
 
-        private void comprasPorEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ComprasPorEmpleado formCompraPorEmpleado = new ComprasPorEmpleado();
-            this.Hide();
-            formCompraPorEmpleado.Show();
-        }
-
-        private void stockDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ListaStock formStock = new ListaStock();
-            this.Hide();
-            formStock.Show();
-        }
-
-        private void altaProductoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AgregarProducto formAgregarProducto = new AgregarProducto(this);
-            this.Hide();
-            formAgregarProducto.Show();
-        }
-
-        private void productoConMenosDe10UnidadesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            StockMenosProductos formStock10Un = new StockMenosProductos();
-            this.Hide();
-            formStock10Un.Show();
-        }
+    
     }
 }

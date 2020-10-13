@@ -8,19 +8,21 @@ namespace Entidades
 {
     public class Empleado : Persona
     {
+        #region Atributos
         DateTime fechaDeIngreso;
         string puestoEmpleado;
         float sueldoEmpleado;
         int[] ticketsVendidos;
+        #endregion
 
         #region constructores
-        private Empleado()
-        {
-            fechaDeIngreso = new DateTime(1900, 01, 01);
-            ticketsVendidos = new int[10];
-            this.puestoEmpleado = "Sin puesto";
-            this.sueldoEmpleado = 0;
-        }
+        //private Empleado()
+        //{
+        //    fechaDeIngreso = new DateTime(1900, 01, 01);
+        //    ticketsVendidos = new int[10];
+        //    this.puestoEmpleado = "Sin puesto";
+        //    this.sueldoEmpleado = 0;
+        //}
         private Empleado(string nombre, string apellido, int dni, DateTime fechaDeIngreso, 
                         string puesto, float sueldo, int[] ticketsVendidos):base(nombre,apellido, dni)
 
@@ -57,6 +59,7 @@ namespace Entidades
 
         #endregion
 
+        #region Metodos
         public static List<Empleado> HardcodearEmpleados()
         {
             List<Empleado> empleadosHardcodeados = new List<Empleado>();
@@ -83,6 +86,21 @@ namespace Entidades
             return miDiccionario;
         }
 
+        public override string DatosPersona()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("Nombre del empleado: {0}\n", this.nombrePersona);
+            sb.AppendFormat("Apellido del empleado: {0}\n", this.apellidoPersona);
+            sb.AppendFormat("DNI del empleado: {0}\n", this.DniPersona);
+            sb.AppendFormat("Fecha de ingreso del empleado: {0}\n", this.fechaDeIngreso);
+            sb.AppendFormat("Puesto del empleado: {0}\n", this.puestoEmpleado);
+            sb.AppendFormat("Sueldo del empleado: {0}\n", this.sueldoEmpleado);
+
+            return sb.ToString();
+        }
+        #endregion
 
     }
+
+
 }
