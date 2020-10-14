@@ -33,3 +33,23 @@ C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\
 C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.ListaStock.resources
 C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.AgregarProducto.resources
 C:\Users\maguirre\source\repos\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.StockMenosProductos.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\bin\Debug\IngresoSistema.exe.config
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\bin\Debug\IngresoSistema.exe
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\bin\Debug\IngresoSistema.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\bin\Debug\Entidades.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\bin\Debug\Entidades.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.csprojAssemblyReference.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.AgregarProducto.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.ComprasPorEmpleado.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.FormIngresoSistema.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.ListaStock.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.MenuPrincipal.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.NuevoCliente.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.Properties.Resources.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.StockMenosProductos.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.UserPass.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.csproj.GenerateResource.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.csproj.CoreCompileInputs.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.csproj.CopyComplete
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.exe
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\IngresoSistema\obj\Debug\IngresoSistema.pdb

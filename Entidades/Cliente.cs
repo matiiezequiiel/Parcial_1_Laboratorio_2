@@ -47,6 +47,29 @@ namespace Entidades
             return sb.ToString();
         }
 
+        public static List<Cliente> operator +(List<Cliente> lista, Cliente nuevoCliente)
+        {
+            bool flag=false;
+
+            foreach (Cliente item in lista)
+            {
+                if (nuevoCliente.dniPersona==item.dniPersona)
+                {
+                    flag = true;
+                    break;
+                }
+
+            }
+
+            if(!flag)
+            {
+                lista.Add(nuevoCliente);
+            }
+           
+            
+            return lista;
+        }
+
         #endregion
 
 

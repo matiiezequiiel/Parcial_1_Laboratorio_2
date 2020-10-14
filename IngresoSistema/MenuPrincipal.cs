@@ -123,7 +123,7 @@ namespace IngresoSistema
 
                 listaAuxProdEnCompra.Add(new Producto(nombre, item.tipoProducto, precio, stock, codigo));
             }
-
+          
 
             foreach (Producto item in listaAuxProd)
             {
@@ -142,8 +142,6 @@ namespace IngresoSistema
         private void RefrescarListaProducto()
         {
             lsvProductos.Items.Clear();
-
-
 
             foreach (Producto item in listaAuxProdEnCompra)
             {
@@ -282,8 +280,6 @@ namespace IngresoSistema
         private void lsvCarrito_DragOver(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Copy;
-
-
         }
 
         private void lsvCarrito_DragDrop(object sender, DragEventArgs e)

@@ -60,7 +60,6 @@
             this.lsvEmpleados.UseCompatibleStateImageBehavior = false;
             this.lsvEmpleados.View = System.Windows.Forms.View.Details;
             this.lsvEmpleados.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lsvEmpleados_ItemCheck);
-            this.lsvEmpleados.SelectedIndexChanged += new System.EventHandler(this.lsvEmpleados_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

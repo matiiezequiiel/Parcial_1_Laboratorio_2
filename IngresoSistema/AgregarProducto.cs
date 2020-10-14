@@ -57,10 +57,6 @@ namespace IngresoSistema
                 MessageBox.Show("Algun valor es invalido, reeingrese los datos.");
             }
             
-            
-            
-
-            
         }
 
         private void LimpiarCampos()
@@ -69,8 +65,6 @@ namespace IngresoSistema
             this.txtPrecio.Text = "";
             this.txtStockInicial.Text = "";
         }
-
-
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

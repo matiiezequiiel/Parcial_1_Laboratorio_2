@@ -34,8 +34,11 @@ namespace Entidades
         /// <returns>Cliente agregado.</returns>
         public static Cliente AgregarCliente(Cliente auxCliente)
         {
-            listaClientes.Add(auxCliente);
+            listaClientes += auxCliente;
             return auxCliente;
+            //listaClientes.Add(auxCliente);
+            //return auxCliente;
+               
         }
 
         /// <summary>
@@ -78,7 +81,6 @@ namespace Entidades
         /// <returns>Lista de empleados cargados.</returns>
         public static List<Empleado> RetornarListaEmpleados()
         {
-
             return listaEmpleados;
         }
 

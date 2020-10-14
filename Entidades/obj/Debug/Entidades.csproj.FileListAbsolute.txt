@@ -10,3 +10,9 @@ C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entid
 C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entidades.dll
 C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entidades.pdb
 C:\Users\maguirre\Source\Repos\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\Entidades\bin\Debug\Entidades.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\Entidades\bin\Debug\Entidades.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entidades.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\Parcial 1\Parcial_1_Laboratorio_2\Entidades\obj\Debug\Entidades.pdb

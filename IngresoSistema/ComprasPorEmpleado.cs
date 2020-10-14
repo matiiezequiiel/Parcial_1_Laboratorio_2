@@ -50,11 +50,6 @@ namespace IngresoSistema
             listaVentas = Comercio.RetornarListaVentas();
         }
 
-        private void lsvEmpleados_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void lsvEmpleados_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             string nombreEmpleado = "";
