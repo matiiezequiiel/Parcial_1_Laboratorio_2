@@ -37,8 +37,7 @@ namespace IngresoSistema
             int aux2;
 
           
-            if (double.TryParse(txtPrecio.Text, out aux) && int.TryParse(txtStockInicial.Text, out aux2) &&
-            this.cmbCategoria.SelectedIndex != 0 )
+            if (double.TryParse(txtPrecio.Text, out aux) && int.TryParse(txtStockInicial.Text, out aux2))
             {
                 nuevoProd.nombreProducto = txtNombre.Text;
                 nuevoProd.precioProducto = aux;
@@ -46,9 +45,17 @@ namespace IngresoSistema
                 nuevoProd.tipoProducto =(Producto.ECategoriaProducto) this.cmbCategoria.SelectedItem;
                 nuevoProd.codigoProducto = listaProductos.Count + 1;
 
-                Comercio.AgregarProducto(nuevoProd);
-                auxMenu.CargarListaProducto();
-                MessageBox.Show("Producto agregado correctamente.");
+                if (Comercio.AgregarProducto(nuevoProd))
+                {
+                    auxMenu.CargarListaProducto();
+                    MessageBox.Show("Producto agregado correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("El producto ya existe.");
+                }
+               
+               
                 LimpiarCampos();
 
             }
@@ -76,6 +83,7 @@ namespace IngresoSistema
         {
             cmbCategoria.DataSource = Enum.GetValues(typeof(Producto.ECategoriaProducto));
             cmbCategoria.SelectedIndex = 0;
+            listaProductos = Comercio.RetornarListaProductos();
         }
 
         private void txtNombre_Validating(object sender, CancelEventArgs e)

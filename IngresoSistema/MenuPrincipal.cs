@@ -269,11 +269,8 @@ namespace IngresoSistema
             }
             catch (Exception)
             {
-
-
+                //No tiene sentido informar al usuario que clickeo fuera de el area.
             }
-
-
 
         }
 
@@ -420,7 +417,15 @@ namespace IngresoSistema
             if (e.Button == MouseButtons.Right)
             {
                 menuCliente.Show(lsvClientes, e.X, e.Y);
-                lineaSeleccionada = lsvClientes.HitTest(e.X, e.Y).Item.Index;
+                try
+                {
+                    lineaSeleccionada = lsvClientes.HitTest(e.X, e.Y).Item.Index;
+                }
+                catch (Exception)
+                {
+                    //No tiene sentido informar al usuario que clickeo fuera de el area.
+                }
+               
             }
         }
 
@@ -457,29 +462,9 @@ namespace IngresoSistema
 
         #region Total y tickets de compras
 
-        #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void SacarTotales()
         {
-            double total=0;
+            double total = 0;
             double totalDesc = 0;
             double descuentoProducto = 0;
 
@@ -487,7 +472,7 @@ namespace IngresoSistema
 
             foreach (ListViewItem auxLista in lsvClientes.Items)
             {
-                if (auxLista.Checked ==true)
+                if (auxLista.Checked == true)
                 {
                     string nombre = auxLista.SubItems[0].Text;
                     string apellido = auxLista.SubItems[1].Text;
@@ -520,16 +505,16 @@ namespace IngresoSistema
 
             }
 
-            
+
         }
 
-        
-        private void GenerarTicket(List<Producto> carritoDeCompras,int nroTicket)
+
+        private void GenerarTicket(List<Producto> carritoDeCompras, int nroTicket)
         {
             string nombreTicket = nroTicket.ToString();
-            Stream fs = new FileStream(".\\data\\Ticket " + nroTicket+".txt", FileMode.Create, FileAccess.Write);
+            Stream fs = new FileStream(".\\data\\Ticket " + nroTicket + ".txt", FileMode.Create, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
-         
+
 
             sw.WriteLine("Usted fue atendido por: " + this.txtEmpleadoLogeado.Text);
             sw.WriteLine("Fecha: " + DateTime.Now);
@@ -539,9 +524,9 @@ namespace IngresoSistema
                 if (item.Checked == true)
                 {
                     sw.WriteLine("Cliente: " + item.Text + " " + item.SubItems[1].Text);
-                  
+
                 }
- 
+
             }
 
             sw.WriteLine("");
@@ -551,16 +536,16 @@ namespace IngresoSistema
 
             foreach (Producto item in carritoDeCompras)
             {
-                sw.WriteLine("{0,-28}   ${1,-20}", item.nombreProducto, item.precioProducto);        
+                sw.WriteLine("{0,-28}   ${1,-20}", item.nombreProducto, item.precioProducto);
             }
             sw.WriteLine("-----------------------------------");
             sw.WriteLine("Total:         {0,20} ", this.lblTotalCompra.Text);
             sw.WriteLine("-----------------------------------");
-          //  sw.WriteLine("");
+            //  sw.WriteLine("");
             sw.WriteLine("-----------------------------------");
-            sw.WriteLine("Descuento:     {0,20}" , this.lblTotalDescuento.Text);
+            sw.WriteLine("Descuento:     {0,20}", this.lblTotalDescuento.Text);
             sw.WriteLine("-----------------------------------");
-          //  sw.WriteLine("");
+            //  sw.WriteLine("");
             sw.WriteLine("-----------------------------------");
             sw.WriteLine("Nro de ticket: {0,20}", nroTicket);
             sw.WriteLine("-----------------------------------");
@@ -570,8 +555,13 @@ namespace IngresoSistema
 
         }
 
-       
 
-    
+        #endregion
+
+
+
+
+
+
     }
 }

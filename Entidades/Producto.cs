@@ -1,12 +1,14 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Producto
+    public class Producto 
     {
         //string nombreProducto;
         //// string categoriaProducto;
@@ -101,7 +103,84 @@ namespace Entidades
 
         }
 
-      
+
+        #region Sobrecargas
+
+        /// <summary>
+        /// Agrega un Cliente a la lista verificando que no exista.
+        /// </summary>
+        /// <param name="lista">Lista de clientes</param>
+        /// <param name="nuevoProducto">Nuevo Cliente</param>
+        /// <returns>True si se agrego, false si ya existe.</returns>
+        /// 
+        public static bool operator +(List<Producto> lista, Producto nuevoProducto)
+        {
+            bool flag = true;
+
+            if(lista==nuevoProducto)
+            {
+                flag = false;
+            }
+
+            if (flag)
+            {
+                lista.Add(nuevoProducto);
+            }
+
+            return flag;
+
+        }
+
+        /// <summary>
+        /// Busca un Producto en la lista.
+        /// </summary>
+        /// <param name="listaProductos">Lista de clientes</param>
+        /// <param name="p">Cliente</param>
+        /// <returns>True si ya existe en la lista, false si no existe.</returns>
+        /// 
+        public static bool operator==(List<Producto> listaProductos,Producto p)
+        {
+            bool yaExiste = false;
+
+            foreach (Producto item in listaProductos)
+            {
+                if(item.nombreProducto == p.nombreProducto && item.tipoProducto == p.tipoProducto)
+                {
+                    yaExiste = true;
+                    break;
+                }
+
+            }
+
+            return yaExiste;
+
+        }
+
+        public static bool operator !=(List<Producto> listaProductos, Producto p)
+        { 
+            return !(listaProductos==p);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != typeof(Producto))
+            {
+                return false;
+            }
+
+            return this == (Producto)obj;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+
+
+        #endregion
+
+
 
 
     }

@@ -36,16 +36,35 @@ namespace IngresoSistema
                 apellido = this.txtApellido.Text;
 
                 nuevoCliente = new Cliente(nombre, apellido, dni);
-                Comercio.AgregarCliente(nuevoCliente);
-                auxMenu.CargarListaCliente();
-                this.Close();
-                UserPass.formMenu.Show();
+                if (Comercio.AgregarCliente(nuevoCliente))
+                {
+                    auxMenu.CargarListaCliente();
+                    MessageBox.Show("Cliente agregado correctamente.");
+
+                }
+                else
+                {
+                    MessageBox.Show("Cliente ya existe.");
+
+                }
+
+                LimpiarCampos();
+               
+
             }
             else
             {
                 MessageBox.Show("Algun valor es invalido, reeingrese los datos.");
             }
             
+        }
+
+        private void LimpiarCampos()
+        {
+            this.txtNombre.Text = "";
+            this.txtApellido.Text = "";
+            this.txtDNI.Text = "";
+
         }
 
         private void txtNombre_Validating(object sender, CancelEventArgs e)
@@ -135,9 +154,6 @@ namespace IngresoSistema
             UserPass.formMenu.Show();
         }
 
-        private void NuevoCliente_Load(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

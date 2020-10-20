@@ -46,29 +46,80 @@ namespace Entidades
 
             return sb.ToString();
         }
+        #endregion
 
-        public static List<Cliente> operator +(List<Cliente> lista, Cliente nuevoCliente)
+        #region Sobrecargas
+
+        /// <summary>
+        /// Agrega un Cliente a la lista verificando que no exista.
+        /// </summary>
+        /// <param name="lista">Lista de clientes</param>
+        /// <param name="nuevoCliente">Nuevo Cliente</param>
+        /// <returns>True si se agrego, false si ya existe.</returns>
+        public static bool operator +(List<Cliente> lista, Cliente nuevoCliente)
         {
-            bool flag=false;
+            bool flag=true;
 
-            foreach (Cliente item in lista)
+             
+            if(lista==nuevoCliente)
             {
-                if (nuevoCliente.dniPersona==item.dniPersona)
-                {
-                    flag = true;
-                    break;
-                }
-
+                flag = false;
             }
 
-            if(!flag)
+            if(flag)
             {
                 lista.Add(nuevoCliente);
             }
            
             
-            return lista;
+            return flag;
         }
+
+
+        /// <summary>
+        /// Busca un Cliente en la lista..
+        /// </summary>
+        /// <param name="listaClientes">Lista de clientes</param>
+        /// <param name="c">Cliente</param>
+        /// <returns>True si ya existe en la lista, false si no existe.</returns>
+        public static bool operator ==(List<Cliente> listaClientes, Cliente c)
+        {
+            bool yaExiste = false;
+
+            foreach (Cliente item in listaClientes)
+            {
+                if (item.dniPersona == c.dniPersona)
+                {
+                    yaExiste = true;
+                    break;
+                }
+                
+            }
+
+            return yaExiste;
+
+        }
+
+        public static bool operator !=(List<Cliente> listaClientes, Cliente c )
+        {
+            return !(listaClientes == c);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if(obj.GetType() != typeof(Cliente))
+            {
+                return false;
+            }
+
+            return this == (Cliente) obj;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
 
         #endregion
 

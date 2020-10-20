@@ -32,10 +32,22 @@ namespace Entidades
         /// </summary>
         /// <param name="auxCliente">Cliente a agregar.</param>
         /// <returns>Cliente agregado.</returns>
-        public static Cliente AgregarCliente(Cliente auxCliente)
+        public static bool AgregarCliente(Cliente auxCliente)
         {
-            listaClientes += auxCliente;
-            return auxCliente;
+            bool clienteAgregado = false;
+
+            if(listaClientes+auxCliente)
+            {
+                clienteAgregado=true;
+            }
+            else
+            {
+                clienteAgregado = false;
+            }
+
+            return clienteAgregado;
+          //  listaClientes += auxCliente;
+          //  return auxCliente;
             //listaClientes.Add(auxCliente);
             //return auxCliente;
                
@@ -46,10 +58,24 @@ namespace Entidades
         /// </summary>
         /// <param name="auxProducto">Producto a agregar.</param>
         /// <returns>Producto agregado.</returns>
-        public static Producto AgregarProducto (Producto auxProducto)
-        { 
-            listaProductos.Add(auxProducto);
-            return auxProducto;
+        public static bool AgregarProducto (Producto auxProducto)
+        {
+
+            bool productoAgregado = false;
+
+            if (listaProductos + auxProducto)
+            {
+                productoAgregado = true;
+            }
+            else
+            {
+                productoAgregado = false;
+            }
+
+            return productoAgregado;
+            //listaProductos += auxProducto;
+            //listaProductos.Add(auxProducto);
+            //return auxProducto;
         }
         
         /// <summary>
